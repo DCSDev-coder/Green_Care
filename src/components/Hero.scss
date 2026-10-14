@@ -1,0 +1,255 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.hero-section {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0 5.5rem;
+  background-color: $slate-950;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+
+  @include mobile {
+    padding: 3.5rem 0 4rem;
+    min-height: auto;
+  }
+
+  .hero-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 25%, rgba($primary, 0.14) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.75rem;
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: $white;
+      max-width: 920px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+      @include tablet {
+        font-size: 3.5rem;
+      }
+
+      @include laptop {
+        font-size: 3.75rem;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: $slate-200;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+
+      @include mobile {
+        font-size: 0.98rem;
+      }
+    }
+
+    /* 3 Pillar Cards - 3 columns side-by-side */
+    .hero-guarantees {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 980px;
+      margin-top: 0.5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+
+      .guarantee-card {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        background: rgba(15, 23, 42, 0.76);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 0.95rem 1.15rem;
+        border-radius: $radius-lg;
+        text-align: left;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          border-color: rgba(52, 211, 153, 0.4);
+          background: rgba(15, 23, 42, 0.88);
+        }
+
+        .icon-wrapper {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: rgba(5, 150, 105, 0.25);
+          border: 1px solid rgba(52, 211, 153, 0.35);
+          color: #34d399;
+          @include flex-center;
+          flex-shrink: 0;
+        }
+
+        .guarantee-text {
+          strong {
+            display: block;
+            font-size: 0.88rem;
+            color: $white;
+            font-weight: 700;
+            line-height: 1.25;
+          }
+
+          p {
+            font-size: 0.78rem;
+            color: $slate-300;
+            margin-top: 0.2rem;
+            line-height: 1.35;
+          }
+        }
+      }
+    }
+
+    /* Action Buttons */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 0.5rem;
+      width: 100%;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: stretch;
+
+        .btn {
+          width: 100%;
+        }
+      }
+
+      .btn-primary {
+        background: $primary;
+        color: $white;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.85rem 1.75rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border-radius: $radius-full;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: $primary-hover;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+        }
+      }
+
+      .btn-glass {
+        background: rgba(30, 41, 59, 0.75);
+        color: $white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 0.85rem 1.6rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: $radius-full;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: rgba(30, 41, 59, 0.95);
+          border-color: rgba(255, 255, 255, 0.35);
+          transform: translateY(-2px);
+        }
+      }
+
+      .btn-outline-glass {
+        background: transparent;
+        color: $slate-200;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 0.85rem 1.6rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: $radius-full;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: $white;
+          border-color: rgba(255, 255, 255, 0.4);
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    /* Location Bar */
+    .hero-location-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: $slate-300;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.45rem 1.15rem;
+      border-radius: $radius-full;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      margin-top: 0.75rem;
+
+      svg {
+        color: #34d399;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

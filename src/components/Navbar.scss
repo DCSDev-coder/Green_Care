@@ -1,0 +1,217 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.top-banner {
+  background: $slate-950;
+  color: $slate-300;
+  font-size: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  .banner-inner {
+    @include flex-between;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  .banner-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $primary;
+    }
+
+    strong {
+      color: $white;
+    }
+
+    .divider {
+      color: $slate-600;
+    }
+  }
+
+  .banner-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    @include mobile {
+      display: none;
+    }
+
+    .badge {
+      background: rgba($primary, 0.2);
+      color: #6ee7b7;
+      padding: 0.15rem 0.5rem;
+      border-radius: $radius-sm;
+      font-weight: 600;
+    }
+
+    .coverage {
+      color: $slate-400;
+    }
+  }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($white, 0.96);
+  @include glass;
+  border-bottom: 1px solid $slate-200;
+  @include smooth-transition;
+
+  &.scrolled {
+    box-shadow: $shadow-md;
+    background: rgba($white, 0.98);
+  }
+
+  .header-inner {
+    height: 72px;
+    @include flex-between;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: $radius-md;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      .brand-name {
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: $slate-900;
+        line-height: 1.1;
+      }
+
+      .brand-tagline {
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: $primary;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+
+    @include max-laptop {
+      display: none;
+    }
+
+    a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: $slate-600;
+      position: relative;
+      padding: 0.4rem 0;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.nav-active {
+        color: $primary;
+        font-weight: 700;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: $primary;
+          border-radius: $radius-full;
+        }
+      }
+
+      &.nav-highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        .badge-tag {
+          background: $primary-light;
+          color: $primary-dark;
+          font-size: 0.65rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          padding: 0.15rem 0.45rem;
+          border-radius: $radius-full;
+        }
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: $slate-800;
+      cursor: pointer;
+      padding: 0.25rem;
+
+      @include max-laptop {
+        display: block;
+      }
+    }
+  }
+
+  .mobile-drawer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.25rem 1.5rem;
+    background: $white;
+    border-top: 1px solid $slate-100;
+    box-shadow: $shadow-lg;
+
+    a {
+      padding: 0.85rem 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: $slate-800;
+      border-bottom: 1px solid $slate-100;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    .mobile-cta-box {
+      margin-top: 1.25rem;
+
+      .full-width {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.floating-whatsapp-container {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 999;
+
+  @include mobile {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: $slate-900;
+    color: $white;
+    padding: 0.75rem 1.25rem;
+    border-radius: $radius-full;
+    border: 1px solid rgba($primary, 0.4);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    @include smooth-transition;
+
+    &:hover {
+      background: #047857;
+      border-color: #047857;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(4, 120, 87, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+
+    .whatsapp-icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #34d399;
+    }
+
+    .floating-label {
+      color: $white;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
