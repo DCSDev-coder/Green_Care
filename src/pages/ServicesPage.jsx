@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import proj1 from '../assets/images/project-1.webp';
-import proj2 from '../assets/images/project-2.webp';
-import proj3 from '../assets/images/project-3.webp';
+import houseReno from '../assets/images/house-renovation.webp';
+import interiorDesign from '../assets/images/interior-design.webp';
+import plumbingWorks from '../assets/images/plumbing-works.webp';
 import c2Main from '../assets/images/c2-main.webp';
 import { Check, ShieldCheck, HelpCircle, ArrowRight, MessageCircle, AlertTriangle } from 'lucide-react';
 
@@ -76,7 +76,7 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={proj1} alt="Landed extension works by Green Cares" className="media-img" />
+                <img src={houseReno} alt="Landed extension works by Green Cares" className="media-img" />
                 <div className="media-caption">
                   <h4>On-Site Structural Masonry</h4>
                   <p>Eco Forest 2-Storey Terrace: Reinforced bricklaying with stiffener columns and roof drainage integration.</p>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={proj2} alt="Condo interior fit out by Green Cares" className="media-img" />
+                <img src={interiorDesign} alt="Condo interior fit out by Green Cares" className="media-img" />
                 <div className="media-caption">
                   <h4>Precision Interior Finishing</h4>
                   <p>Carefully leveled SPC flooring, false ceilings, and ambient architectural cove lighting.</p>
@@ -204,7 +204,7 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={proj1} alt="Waterproofing test verification by Green Cares" className="media-img" />
+                <img src={plumbingWorks} alt="Waterproofing test verification by Green Cares" className="media-img" />
                 <div className="media-caption">
                   <h4>Water Ponding In Progress</h4>
                   <p>Physical flood test verified and signed off before mortar screed and porcelain tiles are applied.</p>

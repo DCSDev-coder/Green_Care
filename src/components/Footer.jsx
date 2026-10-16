@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
-import logoSquare from '../assets/images/logo-square.png';
+import gcsLogo from '../assets/images/gcs-logo-trimmed.webp';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
@@ -14,11 +14,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="footer-col brand-col">
             <Link to="/" className="footer-logo">
-              <img src={logoSquare} alt="Green Cares Logo" className="logo-img" />
-              <div className="logo-text">
-                <span className="name">GREEN CARES</span>
-                <span className="sub">Residential Renovation Specialists</span>
-              </div>
+              <img src={gcsLogo} alt="Green Cares Specialists - Plan Design Build" className="logo-img" />
             </Link>
             <p className="brand-summary">
               Specialized residential home renovation, wet kitchen extensions, and condominium fit-outs across Semenyih, Kajang, and the wider Klang Valley. Built with transparent on-site supervision and uncompromising craftsmanship.

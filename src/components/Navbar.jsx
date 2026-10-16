@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss';
-import logoSquare from '../assets/images/logo-square.png';
+import gcsLogo from '../assets/images/gcs-logo-trimmed.webp';
 import { Menu, X, MessageCircle } from 'lucide-react';
 
 export default function Navbar() {
@@ -42,11 +42,7 @@ export default function Navbar() {
           
           {/* Logo Brand */}
           <Link to="/" className="brand-logo" onClick={closeMenu}>
-            <img src={logoSquare} alt="Green Cares Logo" className="logo-img" />
-            <div className="brand-text">
-              <span className="brand-name">GREEN CARES</span>
-              <span className="brand-tagline">Residential Specialists</span>
-            </div>
+            <img src={gcsLogo} alt="Green Cares Specialists - Plan Design Build" className="logo-img" />
           </Link>
 
           {/* Desktop Navigation Links */}

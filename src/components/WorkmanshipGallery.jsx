@@ -3,6 +3,10 @@ import './WorkmanshipGallery.scss';
 import proj1 from '../assets/images/project-1.webp';
 import proj2 from '../assets/images/project-2.webp';
 import proj3 from '../assets/images/project-3.webp';
+import proj4 from '../assets/images/image-project-4.webp';
+import houseReno from '../assets/images/house-renovation.webp';
+import finisherImg from '../assets/images/finisher.webp';
+import glassImg from '../assets/images/glass-and-aluminium.webp';
 import c2Main from '../assets/images/c2-main.webp';
 import { ShieldCheck, CheckCircle2, ArrowRight, Eye, Wrench, Sparkles, Send } from 'lucide-react';
 
@@ -28,7 +32,7 @@ const galleryItems = [
     location: 'Semi-D Renovation, Kajang',
     status: 'SIRIM Conduits',
     statusType: 'info',
-    image: proj3,
+    image: proj4,
     description: 'Neat horizontal and vertical wall chasing using high-grade PVC conduits. No diagonal shortcuts or dangerous buried wire joints.',
     spec: 'Dedicated ELCB safety tripping & 3-phase balancing',
     result: 'Fire Safety Inspected'
@@ -41,7 +45,7 @@ const galleryItems = [
     location: 'Eco Forest 2-Storey House',
     status: 'RC Stiffeners Tied',
     statusType: 'warning',
-    image: proj1,
+    image: finisherImg,
     description: 'Proper reinforced concrete lintel beams and damp-proof plastic membranes beneath the subfloor prevent ground dampness and cracked tiles.',
     spec: 'Anti-crack rebar mesh & damp barrier membrane',
     result: 'Solid Settlement Assured'
@@ -54,7 +58,7 @@ const galleryItems = [
     location: 'Living & Dining Floor Revamp',
     status: 'Zero Hollow Screed',
     statusType: 'info',
-    image: proj2,
+    image: houseReno,
     description: 'Every 600x1200mm tile is buttered with full-coverage tile adhesive and adjusted with leveling clips to eliminate lippage and hollow taps.',
     spec: 'Self-leveling spacers & polymer-modified mortar',
     result: 'Dead Flush Walkway'
@@ -67,7 +71,7 @@ const galleryItems = [
     location: 'Dry & Wet Kitchen Separator',
     status: 'Tempered Safety Glass',
     statusType: 'purple',
-    image: proj2,
+    image: glassImg,
     description: 'Ceiling-hung heavy-duty tracks eliminate clumsy floor channels, preventing tripping hazards and dirt buildup between kitchen areas.',
     spec: '2.0mm powder-coated aluminium framing',
     result: 'Silent Gliding Rollers'
