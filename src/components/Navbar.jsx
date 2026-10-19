@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss';
-import gcsLogo from '../assets/images/gcs-logo-trimmed.webp';
+import gcsBrandLogo from '../assets/images/gcs-brand-logo-transparent.png';
 import { Menu, X, MessageCircle } from 'lucide-react';
 
 export default function Navbar() {
@@ -40,9 +40,9 @@ export default function Navbar() {
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container header-inner">
           
-          {/* Logo Brand */}
+          {/* Logo Brand on Header */}
           <Link to="/" className="brand-logo" onClick={closeMenu}>
-            <img src={gcsLogo} alt="Green Cares Specialists - Plan Design Build" className="logo-img" />
+            <img src={gcsBrandLogo} alt="GCS Plan Design Build - Transformation & Renovation" className="logo-img" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -67,8 +67,12 @@ export default function Navbar() {
             </NavLink>
           </nav>
 
-          {/* Mobile Menu Toggle Button (WhatsApp button removed from header per user request) */}
+          {/* Desktop Consultation CTA & Mobile Toggle */}
           <div className="header-actions">
+            <Link to="/contact" className="btn btn-nav-cta">
+              Book Consultation
+            </Link>
+
             <button 
               className="mobile-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

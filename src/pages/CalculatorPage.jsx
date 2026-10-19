@@ -8,7 +8,6 @@ export default function CalculatorPage() {
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container page-hero-inner">
-          <span className="page-badge">Transparent Budget Planning</span>
           <h1>Renovation Cost Estimator</h1>
           <p>
             Avoid unrealistic contractor ballparks. Use our interactive estimator to calculate a realistic investment range based on actual current labor and material rates in Selangor and KL.
@@ -16,8 +15,8 @@ export default function CalculatorPage() {
         </div>
       </div>
 
-      {/* Calculator Interactive Suite */}
-      <CostEstimator />
+      {/* Calculator Interactive Suite (Full 2-Column Planning Studio) */}
+      <CostEstimator isPage={true} />
 
       {/* Renovation Budget Breakdown Education */}
       <section className="section bg-white border-t border-slate-200">

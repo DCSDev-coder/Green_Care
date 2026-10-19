@@ -1,0 +1,201 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.home-services-section {
+  padding: 5rem 0 4.5rem;
+  background: #ffffff;
+  position: relative;
+
+  @include mobile {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .home-section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+
+    @include mobile {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $primary-dark;
+      background: #ecfdf5;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.3rem 0.85rem;
+      border-radius: $radius-full;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: $slate-900;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+
+      @include mobile {
+        font-size: 1.75rem;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: $slate-600;
+      line-height: 1.6;
+      margin: 0;
+
+      @include mobile {
+        font-size: 0.92rem;
+      }
+    }
+  }
+
+  // 4-Column Modern Grid
+  .home-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+
+  .home-service-card {
+    background: #ffffff;
+    border: 1px solid $slate-200;
+    border-radius: $radius-xl;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    @include smooth-transition;
+
+    &:hover {
+      border-color: rgba(16, 185, 129, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(16, 185, 129, 0.08);
+
+      .service-link {
+        color: $primary-dark;
+        gap: 0.55rem;
+      }
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+
+      .service-icon-wrap {
+        width: 44px;
+        height: 44px;
+        border-radius: $radius-lg;
+        background: #ecfdf5;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: $slate-500;
+        background: $slate-100;
+        padding: 0.25rem 0.65rem;
+        border-radius: $radius-full;
+      }
+    }
+
+    .service-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $slate-900;
+      line-height: 1.35;
+      margin-bottom: 0.65rem;
+    }
+
+    .service-desc {
+      font-size: 0.86rem;
+      color: $slate-600;
+      line-height: 1.6;
+      margin: 0 0 1.25rem;
+      flex-grow: 1;
+    }
+
+    .service-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.35rem;
+
+      .spec-pill {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #065f46;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.15);
+        padding: 0.2rem 0.55rem;
+        border-radius: $radius-md;
+      }
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: $primary;
+      text-decoration: none;
+      margin-top: auto;
+      @include smooth-transition;
+    }
+  }
+
+  .home-services-footer {
+    text-align: center;
+
+    .btn-outline-emerald {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1.5px solid rgba(16, 185, 129, 0.35);
+      color: $primary-dark;
+      padding: 0.65rem 1.4rem;
+      border-radius: $radius-full;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      @include smooth-transition;
+
+      &:hover {
+        background: #ecfdf5;
+        border-color: $primary;
+        color: #065f46;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

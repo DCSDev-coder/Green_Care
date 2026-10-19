@@ -3,27 +3,34 @@
 
 .coverage-section {
   background: $white;
+  padding: 4.5rem 0;
   border-bottom: 1px solid $slate-200;
+
+  @include mobile {
+    padding: 3rem 0;
+  }
 
   .coverage-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
+    gap: 2.5rem;
 
     @include laptop {
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 4rem;
+      gap: 3.5rem;
+      align-items: center; /* Vertically centers the right column so it's in the middle */
     }
   }
 
+  /* Left Column: Interactive Regional Coverage */
   .coverage-left {
     h2 {
       font-size: 2.25rem;
       font-weight: 800;
       margin-top: 0.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: $slate-900;
+      letter-spacing: -0.02em;
 
       @include mobile {
         font-size: 1.75rem;
@@ -34,58 +41,260 @@
       font-size: 0.95rem;
       color: $slate-600;
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
-    .locations-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.85rem;
+    .zone-selector-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: $slate-500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
 
-      @include tablet {
-        grid-template-columns: repeat(2, 1fr);
+    /* 2-Column Tabs on Left */
+    .zone-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+
+      @include mobile {
+        grid-template-columns: 1fr;
       }
 
-      .location-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
+      .zone-pill-card {
         background: $slate-50;
-        border: 1px solid $slate-200;
-        padding: 0.85rem 1rem;
+        border: 1.5px solid $slate-200;
         border-radius: $radius-md;
+        padding: 0.75rem 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        text-align: left;
         @include smooth-transition;
 
         &:hover {
           background: $white;
-          border-color: rgba($primary, 0.4);
-          box-shadow: $shadow-sm;
+          border-color: $slate-400;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .pin-icon {
-          color: $primary;
-          margin-top: 2px;
+        &.active {
+          background: #ecfdf5;
+          border-color: #064e3b;
+          box-shadow: 0 4px 14px rgba(6, 78, 59, 0.12);
+
+          .pill-left {
+            .pin-circle {
+              background: #064e3b;
+              color: $white;
+              border-color: #064e3b;
+            }
+
+            .pill-title {
+              color: #064e3b;
+              font-weight: 700;
+            }
+          }
+
+          .active-indicator {
+            color: #064e3b;
+          }
+        }
+
+        .pill-left {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+
+          .pin-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: $white;
+            border: 1px solid $slate-200;
+            color: $slate-500;
+            @include flex-center;
+            flex-shrink: 0;
+            @include smooth-transition;
+          }
+
+          .pill-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: $slate-800;
+            line-height: 1.3;
+          }
+        }
+
+        .active-indicator {
+          color: #064e3b;
+          display: flex;
+          align-items: center;
           flex-shrink: 0;
         }
+      }
+    }
 
-        strong {
+    /* Active Zone Showcase Card */
+    .active-zone-showcase {
+      background: $white;
+      border: 1.5px solid #064e3b;
+      border-radius: $radius-xl;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.08);
+      @include smooth-transition;
+
+      .showcase-top {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $slate-200;
+
+        .showcase-title-box {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.85rem;
+
+          .zone-icon-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: $radius-md;
+            background: #ecfdf5;
+            color: #064e3b;
+            border: 1px solid rgba(6, 78, 59, 0.2);
+            @include flex-center;
+            flex-shrink: 0;
+          }
+
+          .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.25rem;
+
+            h3 {
+              font-size: 1.15rem;
+              font-weight: 800;
+              color: $slate-900;
+            }
+
+            .zone-status-badge {
+              display: inline-flex;
+              align-items: center;
+              background: #ecfdf5;
+              color: #064e3b;
+              border: 1px solid #a7f3d0;
+              font-size: 0.72rem;
+              font-weight: 700;
+              padding: 0.2rem 0.65rem;
+              border-radius: $radius-full;
+            }
+          }
+
+          .transit-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: $slate-500;
+            font-weight: 500;
+
+            svg {
+              color: #064e3b;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+
+      .township-section {
+        margin-bottom: 1rem;
+
+        .sub-label {
           display: block;
-          font-size: 0.82rem;
-          color: $slate-900;
-          line-height: 1.3;
+          font-size: 0.72rem;
+          font-weight: 700;
+          color: $slate-400;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          margin-bottom: 0.5rem;
         }
 
-        p {
-          font-size: 0.72rem;
-          color: $slate-500;
-          margin-top: 0.15rem;
-          line-height: 1.35;
+        .township-chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+
+          .township-chip {
+            background: $slate-100;
+            color: $slate-800;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.28rem 0.65rem;
+            border-radius: $radius-sm;
+            border: 1px solid $slate-200;
+          }
+        }
+      }
+
+      .zone-focus-text {
+        font-size: 0.82rem;
+        color: $slate-600;
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+        padding: 0.75rem;
+        background: $slate-50;
+        border-radius: $radius-md;
+        border: 1px solid $slate-200;
+
+        strong {
+          color: $slate-900;
+        }
+      }
+
+      .zone-footer-action {
+        .btn-zone-action {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #064e3b;
+          color: $white;
+          border: 1px solid #064e3b;
+          padding: 0.75rem 1.4rem;
+          font-size: 0.84rem;
+          font-weight: 700;
+          border-radius: $radius-md;
+          box-shadow: 0 4px 14px rgba(6, 78, 59, 0.2);
+          @include smooth-transition;
+
+          &:hover {
+            background: #043e30;
+            border-color: #043e30;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(6, 78, 59, 0.3);
+          }
         }
       }
     }
   }
 
+  /* Right Column: Office & Consultation Card (Lower & Centered in the middle) */
   .coverage-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    @include laptop {
+      /* Shifts the card down so it aligns with the middle of the left interactive content */
+      margin-top: 3.5rem;
+    }
+
     .contact-card {
       background: $slate-50;
       border: 1px solid $slate-200;
@@ -106,7 +315,7 @@
         border-bottom: 1px solid $slate-200;
 
         .compass-icon {
-          color: $primary;
+          color: #064e3b;
           flex-shrink: 0;
         }
 
@@ -138,7 +347,7 @@
             border-radius: $radius-sm;
             background: $white;
             border: 1px solid $slate-200;
-            color: $primary;
+            color: #064e3b;
             @include flex-center;
             flex-shrink: 0;
             margin-top: 2px;
@@ -162,7 +371,7 @@
           }
 
           a:hover {
-            color: $primary;
+            color: #064e3b;
           }
         }
       }
@@ -172,6 +381,29 @@
 
         .full-width {
           width: 100%;
+        }
+
+        .btn-dark-green {
+          background: #064e3b;
+          color: $white;
+          border: 1px solid #064e3b;
+          font-weight: 700;
+          font-size: 0.92rem;
+          padding: 0.9rem 1.5rem;
+          border-radius: $radius-md;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+          @include smooth-transition;
+
+          &:hover {
+            background: #043e30;
+            border-color: #043e30;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 78, 59, 0.35);
+          }
         }
       }
     }

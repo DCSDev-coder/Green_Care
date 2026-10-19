@@ -3,143 +3,149 @@
 
 .hero-section {
   position: relative;
-  min-height: 82vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 0 5.5rem;
-  background-color: $slate-950;
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 3.5rem 0 4.5rem;
+  border-bottom: 1px solid $slate-200;
   overflow: hidden;
 
   @include mobile {
-    padding: 3.5rem 0 4rem;
-    min-height: auto;
+    padding: 2.25rem 0 3rem;
   }
 
-  .hero-backdrop {
+  /* Subtle ambient lighting glow */
+  .hero-glow-blob {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 25%, rgba($primary, 0.14) 0%, transparent 65%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
     pointer-events: none;
+    filter: blur(120px);
+    opacity: 0.4;
+
+    &.top-center {
+      top: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(13, 148, 136, 0.08) 50%, transparent 70%);
+    }
   }
 
   .hero-container {
     position: relative;
     z-index: 10;
-    max-width: 1080px;
-    margin: 0 auto;
-    width: 100%;
   }
 
-  .hero-center-content {
+  /* 1. Main 2-Column Split: Content & Smaller Logo on Left, Image Card Right Beside */
+  .hero-main-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 3.5rem;
+    margin-bottom: 2.75rem;
+
+    @include laptop {
+      gap: 2.25rem;
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .hero-content-block {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.75rem;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.25rem;
 
-    .hero-title {
-      font-size: 2.75rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      color: $white;
-      max-width: 920px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    @include tablet {
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .hero-badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
 
       @include tablet {
-        font-size: 3.5rem;
+        justify-content: center;
       }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        background: #ecfdf5;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #047857;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.32rem 0.85rem;
+        border-radius: $radius-full;
+      }
+
+      .hero-subtag {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: $slate-500;
+        letter-spacing: 0.03em;
+      }
+    }
+
+    .hero-heading {
+      font-size: 2.85rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: $slate-900;
+      margin: 0.25rem 0 0.5rem;
 
       @include laptop {
-        font-size: 3.75rem;
+        font-size: 2.5rem;
       }
 
-      .gradient-text {
-        background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
+      @include tablet {
+        font-size: 2.25rem;
       }
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-      color: $slate-200;
-      line-height: 1.7;
-      max-width: 760px;
-      margin: 0 auto;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 
       @include mobile {
-        font-size: 0.98rem;
+        font-size: 1.85rem;
+      }
+
+      .hero-br {
+        @include tablet {
+          display: none;
+        }
+      }
+
+      .text-emerald-gradient {
+        background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
-    /* 3 Pillar Cards - 3 columns side-by-side */
-    .hero-guarantees {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      width: 100%;
-      max-width: 980px;
-      margin-top: 0.5rem;
+    .hero-lead {
+      font-size: 1.05rem;
+      color: $slate-600;
+      line-height: 1.65;
+      max-width: 530px;
+      margin: 0;
 
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
+      @include tablet {
+        max-width: 620px;
+        font-size: 0.98rem;
       }
 
-      .guarantee-card {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-        background: rgba(15, 23, 42, 0.76);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 0.95rem 1.15rem;
-        border-radius: $radius-lg;
-        text-align: left;
-        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-          border-color: rgba(52, 211, 153, 0.4);
-          background: rgba(15, 23, 42, 0.88);
-        }
-
-        .icon-wrapper {
-          width: 34px;
-          height: 34px;
-          border-radius: 50%;
-          background: rgba(5, 150, 105, 0.25);
-          border: 1px solid rgba(52, 211, 153, 0.35);
-          color: #34d399;
-          @include flex-center;
-          flex-shrink: 0;
-        }
-
-        .guarantee-text {
-          strong {
-            display: block;
-            font-size: 0.88rem;
-            color: $white;
-            font-weight: 700;
-            line-height: 1.25;
-          }
-
-          p {
-            font-size: 0.78rem;
-            color: $slate-300;
-            margin-top: 0.2rem;
-            line-height: 1.35;
-          }
-        }
+      @include mobile {
+        font-size: 0.92rem;
       }
     }
 
@@ -147,107 +153,267 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding-top: 0.5rem;
-      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 0.25rem;
+
+      @include tablet {
+        justify-content: center;
+      }
 
       @include mobile {
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
 
         .btn {
           width: 100%;
         }
       }
 
-      .btn-primary {
+      .btn-hero-primary {
         background: $primary;
         color: $white;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        border: 1px solid $primary;
         padding: 0.85rem 1.75rem;
-        font-weight: 700;
         font-size: 0.95rem;
-        border-radius: $radius-full;
+        font-weight: 700;
+        border-radius: $radius-md;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
-        transition: all 0.2s ease;
+        box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+        @include smooth-transition;
 
         &:hover {
           background: $primary-hover;
+          border-color: $primary-hover;
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+          box-shadow: 0 8px 20px rgba(5, 150, 105, 0.35);
         }
       }
 
-      .btn-glass {
-        background: rgba(30, 41, 59, 0.75);
-        color: $white;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+      .btn-hero-secondary {
+        background: $white;
+        color: $slate-800;
+        border: 1px solid $slate-300;
         padding: 0.85rem 1.6rem;
-        font-weight: 600;
         font-size: 0.95rem;
-        border-radius: $radius-full;
+        font-weight: 600;
+        border-radius: $radius-md;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        transition: all 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        @include smooth-transition;
 
         &:hover {
-          background: rgba(30, 41, 59, 0.95);
-          border-color: rgba(255, 255, 255, 0.35);
+          background: $slate-50;
+          border-color: $slate-400;
+          color: $slate-950;
           transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
       }
+    }
+  }
 
-      .btn-outline-glass {
-        background: transparent;
-        color: $slate-200;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 0.85rem 1.6rem;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border-radius: $radius-full;
-        display: inline-flex;
+  /* 2. Visual Architectural Card Right Beside */
+  .hero-visual-block {
+    width: 100%;
+
+    .banner-card {
+      position: relative;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      border: 1px solid $slate-200;
+      box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.15), 0 2px 6px rgba(0, 0, 0, 0.04);
+      height: 430px;
+      background: $slate-900;
+
+      @include laptop {
+        height: 390px;
+      }
+
+      @include tablet {
+        height: 360px;
+      }
+
+      @include mobile {
+        height: 250px;
+        border-radius: $radius-lg;
+      }
+
+      .banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      &:hover .banner-img {
+        transform: scale(1.02);
+      }
+
+      .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(15, 23, 42, 0.25) 100%);
+        pointer-events: none;
+      }
+
+      /* Floating Badges */
+      .floating-badge {
+        position: absolute;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        transition: all 0.2s ease;
+        gap: 0.75rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+        border-radius: $radius-md;
+        padding: 0.65rem 0.9rem;
+        z-index: 5;
+        transition: transform 0.3s ease;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.1);
-          color: $white;
-          border-color: rgba(255, 255, 255, 0.4);
           transform: translateY(-2px);
+        }
+
+        .badge-icon {
+          width: 30px;
+          height: 30px;
+          border-radius: $radius-sm;
+          background: #ecfdf5;
+          color: $primary;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+
+          &.success {
+            background: #d1fae5;
+            color: #047857;
+          }
+        }
+
+        .floating-title {
+          display: block;
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: $slate-900;
+          line-height: 1.2;
+        }
+
+        .floating-sub {
+          display: block;
+          font-size: 0.7rem;
+          color: $slate-500;
+          margin-top: 0.15rem;
+        }
+
+        &.top-badge {
+          top: 1.25rem;
+          right: 1.25rem;
+
+          @include mobile {
+            top: 0.75rem;
+            right: 0.75rem;
+            padding: 0.45rem 0.65rem;
+          }
+        }
+
+        &.bottom-badge {
+          bottom: 1.25rem;
+          left: 1.25rem;
+
+          @include mobile {
+            bottom: 0.75rem;
+            left: 0.75rem;
+            padding: 0.45rem 0.65rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* 3. Footer Bar: 3-Pillar Guarantees & Location Underneath */
+  .hero-footer-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    .hero-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: $white;
+      border: 1px solid $slate-200;
+      border-radius: $radius-lg;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .trust-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: $radius-sm;
+          background: #ecfdf5;
+          color: $primary;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        strong {
+          display: block;
+          font-size: 0.88rem;
+          color: $slate-900;
+          font-weight: 700;
+          line-height: 1.25;
+        }
+
+        span {
+          display: block;
+          font-size: 0.75rem;
+          color: $slate-500;
+          margin-top: 0.15rem;
         }
       }
     }
 
-    /* Location Bar */
-    .hero-location-bar {
+    .hero-location {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-size: 0.82rem;
-      color: $slate-300;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0.45rem 1.15rem;
-      border-radius: $radius-full;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      margin-top: 0.75rem;
+      color: $slate-500;
+      font-weight: 500;
 
       svg {
-        color: #34d399;
+        color: $primary;
         flex-shrink: 0;
       }
     }

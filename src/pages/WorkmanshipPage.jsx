@@ -1,7 +1,7 @@
 import React from 'react';
 import WorkmanshipGallery from '../components/WorkmanshipGallery';
 import c2Main from '../assets/images/c2-main.webp';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 
 export default function WorkmanshipPage() {
   return (
@@ -10,10 +10,9 @@ export default function WorkmanshipPage() {
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container page-hero-inner">
-          <span className="page-badge">Zero Compromise on Quality</span>
           <h1>Site Workmanship & Proof of Execution</h1>
           <p>
-            Homeowners don't need glossy Pinterest renders. You need proof that the unseen foundation, waterproofing, concealed wiring, and masonry inside your walls are executed to uncompromising engineering standards.
+            Verified on-site proof for waterproofing, concealed electrical safety, and architectural joinery across every project.
           </p>
         </div>
       </div>
@@ -76,6 +75,10 @@ export default function WorkmanshipPage() {
 
             <div className="c2-image-card">
               <img src={c2Main} alt="C2 Coffee and Candle finished space" />
+              <div className="c2-image-badge">
+                <MapPin size={12} />
+                <span>Eco Forest, Semenyih</span>
+              </div>
             </div>
           </div>
 

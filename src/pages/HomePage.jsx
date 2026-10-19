@@ -1,57 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import ResidentialServices from '../components/ResidentialServices';
-import WorkmanshipGallery from '../components/WorkmanshipGallery';
-import ProcessTimeline from '../components/ProcessTimeline';
-import CostEstimator from '../components/CostEstimator';
-import CoverageHQ from '../components/CoverageHQ';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import HomeServices from '../components/HomeServices';
+import HomeProof from '../components/HomeProof';
+import HomeProcess from '../components/HomeProcess';
+import HomeEstimator from '../components/HomeEstimator';
+import HomeCoverage from '../components/HomeCoverage';
 
 export default function HomePage() {
   return (
     <div className="home-page">
-      {/* Hero Showcase */}
+      {/* 1. Hero Showcase: Bold Typography, Proof Card & Guarantees */}
       <Hero />
 
-      {/* Services Overview */}
-      <div className="home-section-wrapper">
-        <ResidentialServices />
-        <div className="container text-center section-action-row">
-          <Link to="/services" className="btn btn-outline-primary">
-            <span>Explore Complete Renovation Specifications & Scopes</span>
-            <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
+      {/* 2. Core Residential Specializations: Modern 4-Card Grid */}
+      <HomeServices />
 
-      {/* Workmanship & Proof */}
-      <div className="home-section-wrapper dark-wrapper">
-        <WorkmanshipGallery />
-        <div className="container text-center section-action-row">
-          <Link to="/workmanship" className="btn btn-primary">
-            <span>View All Site Execution Proofs & C2 Cafe Case Study</span>
-            <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
+      {/* 3. Real Proof & Quality Standards: 3 Curated Execution Cards */}
+      <HomeProof />
 
-      {/* 5-Step Process */}
-      <div className="home-section-wrapper">
-        <ProcessTimeline />
-        <div className="container text-center section-action-row">
-          <Link to="/process" className="btn btn-secondary">
-            <span>Learn How Our Itemized BOQ & Warranty Protects You</span>
-            <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
+      {/* 4. The Green Cares Standard: Clean 4-Step Connected Workflow */}
+      <HomeProcess />
 
-      {/* Calculator Widget Preview */}
-      <CostEstimator />
+      {/* 5. Quick Budget Estimator: Interactive 30-Second Teaser Card */}
+      <HomeEstimator />
 
-      {/* Office & Regional Coverage */}
-      <CoverageHQ />
+      {/* 6. Operational Headquarters & Service Enclaves */}
+      <HomeCoverage />
     </div>
   );
 }

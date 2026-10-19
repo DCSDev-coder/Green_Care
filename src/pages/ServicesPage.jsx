@@ -1,100 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import houseReno from '../assets/images/house-renovation.webp';
 import interiorDesign from '../assets/images/interior-design.webp';
 import plumbingWorks from '../assets/images/plumbing-works.webp';
 import c2Main from '../assets/images/c2-main.webp';
-import { Check, ShieldCheck, HelpCircle, ArrowRight, MessageCircle, AlertTriangle } from 'lucide-react';
+import { 
+  Check, 
+  ShieldCheck, 
+  HelpCircle, 
+  ArrowRight, 
+  MessageCircle, 
+  Calculator, 
+  CheckCircle2, 
+  MapPin, 
+  Camera, 
+  XCircle, 
+  ChevronDown 
+} from 'lucide-react';
+
+const FAQS = [
+  {
+    q: "How long does a typical condominium interior fit-out take?",
+    a: "A comprehensive condo fit-out (including SPC flooring, plaster ceilings, lighting, and custom joinery) typically takes between 4 to 7 weeks, depending on JMB building management working hours and permit approvals."
+  },
+  {
+    q: "Do you handle condominium renovation permits and management deposits?",
+    a: "Yes. We assist with preparing the required submission drawings, contractor insurance coverage, and scheduled work paperwork for your building management (JMB/MC) before any on-site work commences."
+  },
+  {
+    q: "Why is your 72-hour water ponding test mandatory?",
+    a: "Water leaks in Malaysian homes frequently happen because contractors tile immediately over damp or untested waterproofing membranes. By flooding the floor for 72 hours, we verify 100% water tightness before any finish tile is installed."
+  },
+  {
+    q: "How do your payment milestones work?",
+    a: "We work on a transparent milestone-based payment schedule tied directly to verified on-site progress (e.g. Deposit booking, completion of wet masonry, completion of rough-in piping/cabling, completion of tiling, and final defect handover). You never pay in advance for unfinished milestones."
+  }
+];
 
 export default function ServicesPage() {
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const toggleFaq = (index) => {
+    setOpenFaq((prev) => (prev === index ? null : index));
+  };
   return (
     <div className="services-page">
       
-      {/* Page Header Hero */}
-      <div className="page-hero">
-        <div className="container page-hero-inner">
-          <span className="page-badge">Comprehensive Residential Capabilities</span>
-          <h1>Specialized Home Renovation Services</h1>
-          <p>
-            We don't take on office towers or industrial tenders. Every tool, technician, and supervisor on our team is dedicated exclusively to residential craftsmanship across Selangor and Kuala Lumpur.
+      {/* Services Header Hero */}
+      <div className="services-hero">
+        <div className="container services-hero-inner">
+          <h1>Home Renovation Services</h1>
+          
+          <p className="services-hero-lead">
+            Specialized condo fit-outs, 72-hour waterproofing, and custom joinery across Selangor & KL.
           </p>
-        </div>
-      </div>
 
-      {/* Service 1: Landed Extensions */}
-      <div className="service-detail-section">
-        <div className="container">
-          <div className="detail-layout">
-            
-            <div className="detail-content">
-              <span className="detail-tag">01 · Structural Masonry</span>
-              <h2>Landed House & Wet Kitchen Extensions</h2>
-              <p className="detail-lead">
-                Expanding a landed home requires proper structural engineering. We construct compliant rear and side extensions designed to last decades without foundation settlement cracks.
-              </p>
-
-              <ul className="feature-list">
-                <li>
-                  <Check size={18} className="icon-check" />
-                  <div>
-                    <strong>Reinforced Concrete (RC) Footing & Lintel Beams</strong>
-                    <p>Tie-back columns and load-bearing lintels over openings prevent unsightly structural wall fractures.</p>
-                  </div>
-                </li>
-                <li>
-                  <Check size={18} className="icon-check" />
-                  <div>
-                    <strong>Damp-Proof Membrane & Subfloor Leveling</strong>
-                    <p>Heavy polyethylene ground sheeting prevents rising moisture from de-bonding your kitchen floor tiles.</p>
-                  </div>
-                </li>
-                <li>
-                  <Check size={18} className="icon-check" />
-                  <div>
-                    <strong>Dedicated Grease Trap & Exhaust Routing</strong>
-                    <p>Heavy-duty plumbing ready for Asian-style high-heat cooking, wok burners, and deep sink drainage.</p>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="detail-actions">
-                <Link to="/calculator" className="btn btn-primary">
-                  <span>Estimate Kitchen Extension</span>
-                  <ArrowRight size={14} />
-                </Link>
-                <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I'm%20asking%20about%20a%20wet%20kitchen%20extension" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  <MessageCircle size={15} />
-                  <span>Quick Consultation</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="detail-media">
-              <div className="media-card">
-                <img src={houseReno} alt="Landed extension works by Green Cares" className="media-img" />
-                <div className="media-caption">
-                  <h4>On-Site Structural Masonry</h4>
-                  <p>Eco Forest 2-Storey Terrace: Reinforced bricklaying with stiffener columns and roof drainage integration.</p>
-                </div>
-              </div>
-            </div>
-
+          <div className="services-hero-actions">
+            <Link to="/calculator" className="btn btn-white-action">
+              <Calculator size={15} />
+              <span>Estimate Renovation Cost</span>
+            </Link>
+            <Link to="/contact" className="btn btn-outline-white">
+              <span>Book Site Inspection</span>
+              <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Service 2: Condo Fit-Outs */}
-      <div className="service-detail-section">
+      {/* Service 1: Condo Fit-Outs */}
+      <div id="condo" className="service-detail-section">
         <div className="container">
-          <div className="detail-layout reverse">
+          <div className="detail-layout">
             
             <div className="detail-content">
-              <span className="detail-tag">02 · High-Rise Living</span>
+              <span className="detail-tag">01 · High-Rise Living</span>
               <h2>Condominium & Apartment Fit-Outs</h2>
               <p className="detail-lead">
                 Renovating a high-rise in Klang Valley comes with strict Management Corporation (JMB/MC) rules. We manage paperwork, security deposits, and working hours with zero drama.
@@ -143,10 +122,23 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={interiorDesign} alt="Condo interior fit out by Green Cares" className="media-img" />
+                <div className="media-img-wrap">
+                  <img src={interiorDesign} alt="Condo interior fit out by Green Cares" className="media-img" />
+                  <div className="media-badge">
+                    <Camera size={12} />
+                    <span>Real Site Photo</span>
+                  </div>
+                </div>
                 <div className="media-caption">
+                  <div className="caption-header">
+                    <span className="caption-location">
+                      <MapPin size={12} />
+                      <span>Cyberjaya High-Rise</span>
+                    </span>
+                    <span className="caption-status">JMB-Compliant</span>
+                  </div>
                   <h4>Precision Interior Finishing</h4>
-                  <p>Carefully leveled SPC flooring, false ceilings, and ambient architectural cove lighting.</p>
+                  <p>Acoustic SPC flooring with IXPE underlay, false ceilings, and ambient architectural cove lighting.</p>
                 </div>
               </div>
             </div>
@@ -155,13 +147,13 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service 3: Bathroom & Waterproofing */}
-      <div className="service-detail-section">
+      {/* Service 2: Bathroom & Waterproofing */}
+      <div id="waterproofing" className="service-detail-section">
         <div className="container">
-          <div className="detail-layout">
+          <div className="detail-layout reverse">
             
             <div className="detail-content">
-              <span className="detail-tag">03 · Wet Area Integrity</span>
+              <span className="detail-tag">02 · Wet Area Integrity</span>
               <h2>Bathroom Remodeling & 72-Hour Waterproofing</h2>
               <p className="detail-lead">
                 Water leaks are the #1 source of contractor disputes in Malaysia. We treat waterproofing as an engineering discipline, never taking shortcuts over old cracked screed.
@@ -204,10 +196,23 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={plumbingWorks} alt="Waterproofing test verification by Green Cares" className="media-img" />
+                <div className="media-img-wrap">
+                  <img src={plumbingWorks} alt="Waterproofing test verification by Green Cares" className="media-img" />
+                  <div className="media-badge">
+                    <Camera size={12} />
+                    <span>QC Verification</span>
+                  </div>
+                </div>
                 <div className="media-caption">
+                  <div className="caption-header">
+                    <span className="caption-location">
+                      <MapPin size={12} />
+                      <span>Kajang & Semenyih</span>
+                    </span>
+                    <span className="caption-status">Mandatory Sign-off</span>
+                  </div>
                   <h4>Water Ponding In Progress</h4>
-                  <p>Physical flood test verified and signed off before mortar screed and porcelain tiles are applied.</p>
+                  <p>Physical 72-hour flood test verified and signed off before mortar screed and porcelain tiles are applied.</p>
                 </div>
               </div>
             </div>
@@ -216,13 +221,13 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service 4: Custom Carpentry & M&E */}
-      <div className="service-detail-section">
+      {/* Service 3: Custom Carpentry & M&E */}
+      <div id="joinery" className="service-detail-section">
         <div className="container">
-          <div className="detail-layout reverse">
+          <div className="detail-layout">
             
             <div className="detail-content">
-              <span className="detail-tag">04 · Joinery & Safety</span>
+              <span className="detail-tag">03 · Joinery & Safety</span>
               <h2>Custom Carpentry & M&E Safety Rewiring</h2>
               <p className="detail-lead">
                 From durable kitchen cabinetry and floor-to-ceiling wardrobes to full 3-phase electrical upgrades that keep modern high-draw appliances safe.
@@ -271,10 +276,23 @@ export default function ServicesPage() {
 
             <div className="detail-media">
               <div className="media-card">
-                <img src={c2Main} alt="Precision carpentry and sliding glass by Green Cares" className="media-img" />
+                <div className="media-img-wrap">
+                  <img src={c2Main} alt="Precision carpentry and sliding glass by Green Cares" className="media-img" />
+                  <div className="media-badge">
+                    <Camera size={12} />
+                    <span>Workshop Direct</span>
+                  </div>
+                </div>
                 <div className="media-caption">
-                  <h4>Heavy-Duty Architectural Joinery</h4>
-                  <p>Commercial-standard sliding glass tracks and bespoke cabinetry designed for years of daily use.</p>
+                  <div className="caption-header">
+                    <span className="caption-location">
+                      <MapPin size={12} />
+                      <span>C2 Flagship Showcase</span>
+                    </span>
+                    <span className="caption-status">Architectural Joinery</span>
+                  </div>
+                  <h4>Heavy-Duty Custom Carpentry</h4>
+                  <p>Ceiling-hung sliding glass tracks and bespoke moisture-resistant cabinetry designed for heavy daily use.</p>
                 </div>
               </div>
             </div>
@@ -284,7 +302,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Comparison Section: Why Choose Green Cares */}
-      <section className="section bg-white">
+      <section className="section bg-white comparison-section">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Direct Comparison</span>
@@ -292,40 +310,156 @@ export default function ServicesPage() {
             <p>Here is how our transparent process contrasts with typical freelance sub-contractors in the market.</p>
           </div>
 
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+          <div className="comparison-table-wrapper">
+            <table className="modern-comparison-table">
               <thead>
-                <tr style={{ background: '#0f172a', color: '#fff', textAlign: 'left' }}>
-                  <th style={{ padding: '1rem', borderRadius: '8px 0 0 0' }}>Renovation Factor</th>
-                  <th style={{ padding: '1rem', background: '#059669' }}>Green Cares Specialists</th>
-                  <th style={{ padding: '1rem', borderRadius: '0 8px 0 0' }}>Typical Freelance Contractor</th>
+                <tr>
+                  <th className="col-factor-head">
+                    <span className="factor-label">Renovation Standard</span>
+                  </th>
+                  <th className="col-gc-head">
+                    <div className="gc-head-box">
+                      <span className="gc-badge">
+                        <ShieldCheck size={13} />
+                        <span>Recommended Standard</span>
+                      </span>
+                      <h3>Green Cares Specialists</h3>
+                      <p>Direct supervision & warranty protection</p>
+                    </div>
+                  </th>
+                  <th className="col-others-head">
+                    <div className="others-head-box">
+                      <span className="others-badge">Market Average</span>
+                      <h3>Typical Freelance Contractor</h3>
+                      <p>Sub-contracted middleman model</p>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
-                  <td style={{ padding: '1rem', fontWeight: 'bold' }}>Quotation Transparency</td>
-                  <td style={{ padding: '1rem', color: '#059669', fontWeight: 'bold' }}>Itemized line-by-line Bill of Quantities (BOQ)</td>
-                  <td style={{ padding: '1rem', color: '#dc2626' }}>Vague 1-page lump sum with hidden variations</td>
+                <tr>
+                  <td className="col-factor">
+                    <strong>Quotation Transparency</strong>
+                    <span className="factor-sub">Pricing breakdown & variation risk</span>
+                  </td>
+                  <td className="col-gc">
+                    <div className="cell-content">
+                      <CheckCircle2 size={18} className="cell-icon icon-success" />
+                      <div>
+                        <strong>Itemized line-by-line Bill of Quantities (BOQ)</strong>
+                        <p>Every material, unit rate, and dimension fixed before signing. Zero hidden markups.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="col-others">
+                    <div className="cell-content">
+                      <XCircle size={18} className="cell-icon icon-danger" />
+                      <div>
+                        <strong>Vague 1-page lump sum</strong>
+                        <p>Hidden variation orders (V.O.) and surprise price hikes midway through construction.</p>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
-                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                  <td style={{ padding: '1rem', fontWeight: 'bold' }}>Waterproofing Method</td>
-                  <td style={{ padding: '1rem', color: '#059669', fontWeight: 'bold' }}>Multi-layer membrane + 72-hr physical flood test</td>
-                  <td style={{ padding: '1rem', color: '#dc2626' }}>Single thin coat with zero water testing</td>
+
+                <tr>
+                  <td className="col-factor">
+                    <strong>Waterproofing Method</strong>
+                    <span className="factor-sub">Wet area leak prevention</span>
+                  </td>
+                  <td className="col-gc">
+                    <div className="cell-content">
+                      <CheckCircle2 size={18} className="cell-icon icon-success" />
+                      <div>
+                        <strong>Multi-layer membrane + 72-hr flood test</strong>
+                        <p>Mandatory 3-day water ponding signed off with photos before floor tiles are installed.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="col-others">
+                    <div className="cell-content">
+                      <XCircle size={18} className="cell-icon icon-danger" />
+                      <div>
+                        <strong>Single thin coat with zero water testing</strong>
+                        <p>High failure rate resulting in water seepage to ground floors or neighbors below.</p>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
-                <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
-                  <td style={{ padding: '1rem', fontWeight: 'bold' }}>Site Supervision</td>
-                  <td style={{ padding: '1rem', color: '#059669', fontWeight: 'bold' }}>Direct company supervisor + weekly photo & video logs</td>
-                  <td style={{ padding: '1rem', color: '#dc2626' }}>Middleman passes job to sub-contractors</td>
+
+                <tr>
+                  <td className="col-factor">
+                    <strong>Site Supervision</strong>
+                    <span className="factor-sub">On-site quality management</span>
+                  </td>
+                  <td className="col-gc">
+                    <div className="cell-content">
+                      <CheckCircle2 size={18} className="cell-icon icon-success" />
+                      <div>
+                        <strong>Direct company supervisor + weekly logs</strong>
+                        <p>Dedicated project PIC sending photo/video progress updates directly to homeowner chat.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="col-others">
+                    <div className="cell-content">
+                      <XCircle size={18} className="cell-icon icon-danger" />
+                      <div>
+                        <strong>Sub-contracted middleman</strong>
+                        <p>Unsupervised workers left to figure out drawings with little or no quality checking.</p>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
-                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                  <td style={{ padding: '1rem', fontWeight: 'bold' }}>Electrical Safety</td>
-                  <td style={{ padding: '1rem', color: '#059669', fontWeight: 'bold' }}>SIRIM-certified PVC conduits with zero diagonal chasing</td>
-                  <td style={{ padding: '1rem', color: '#dc2626' }}>Unprotected wires buried directly in wall plaster</td>
+
+                <tr>
+                  <td className="col-factor">
+                    <strong>Electrical & M&E Safety</strong>
+                    <span className="factor-sub">Conduit wiring & load balancing</span>
+                  </td>
+                  <td className="col-gc">
+                    <div className="cell-content">
+                      <CheckCircle2 size={18} className="cell-icon icon-success" />
+                      <div>
+                        <strong>SIRIM PVC conduits & neat vertical chasing</strong>
+                        <p>Balanced DB board with RCCB protection for high-amp induction hobs and EV chargers.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="col-others">
+                    <div className="cell-content">
+                      <XCircle size={18} className="cell-icon icon-danger" />
+                      <div>
+                        <strong>Unprotected wires in plaster</strong>
+                        <p>Diagonal wall slits without conduit piping; severe electrical fire hazard.</p>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
-                <tr style={{ background: '#f8fafc' }}>
-                  <td style={{ padding: '1rem', fontWeight: 'bold' }}>Post-Handover Warranty</td>
-                  <td style={{ padding: '1rem', color: '#059669', fontWeight: 'bold' }}>Formal written Workmanship Warranty Card</td>
-                  <td style={{ padding: '1rem', color: '#dc2626' }}>Unreachable once final payment is made</td>
+
+                <tr>
+                  <td className="col-factor">
+                    <strong>Post-Handover Warranty</strong>
+                    <span className="factor-sub">Defects & aftercare liability</span>
+                  </td>
+                  <td className="col-gc">
+                    <div className="cell-content">
+                      <CheckCircle2 size={18} className="cell-icon icon-success" />
+                      <div>
+                        <strong>Formal written Workmanship Warranty Card</strong>
+                        <p>Direct office accountability for any defects, water seepage, or hollow tiles.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="col-others">
+                    <div className="cell-content">
+                      <XCircle size={18} className="cell-icon icon-danger" />
+                      <div>
+                        <strong>Unreachable after final payment</strong>
+                        <p>No contractual warranty, personal numbers blocked or excuses when problems appear.</p>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -343,25 +477,36 @@ export default function ServicesPage() {
           </div>
 
           <div className="faq-grid">
-            <div className="faq-card">
-              <h4><HelpCircle size={18} /> How long does a typical landed wet kitchen extension take?</h4>
-              <p>A standard rear extension (including foundation footing, brickwork, RC slab, waterproofing, tiling, and roofing) typically takes between 6 to 9 weeks, subject to weather conditions and council permits.</p>
-            </div>
+            {FAQS.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div 
+                  key={index} 
+                  className={`faq-card ${isOpen ? 'is-open' : ''}`}
+                >
+                  <button 
+                    type="button"
+                    className="faq-question-btn" 
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={isOpen}
+                  >
+                    <div className="faq-question-content">
+                      <HelpCircle size={18} className="faq-icon" />
+                      <span className="faq-question-text">{faq.q}</span>
+                    </div>
+                    <span className="faq-chevron-wrap">
+                      <ChevronDown size={18} className="faq-chevron" />
+                    </span>
+                  </button>
 
-            <div className="faq-card">
-              <h4><HelpCircle size={18} /> Do you handle condominium renovation permits and management deposits?</h4>
-              <p>Yes. We assist with preparing the required submission drawings, contractor insurance coverage, and scheduled work paperwork for your building management (JMB/MC) before any on-site work commences.</p>
-            </div>
-
-            <div className="faq-card">
-              <h4><HelpCircle size={18} /> Why is your 72-hour water ponding test mandatory?</h4>
-              <p>Water leaks in Malaysian homes frequently happen because contractors tile immediately over damp or untested waterproofing membranes. By flooding the floor for 72 hours, we verify 100% water tightness before any finish tile is installed.</p>
-            </div>
-
-            <div className="faq-card">
-              <h4><HelpCircle size={18} /> How do your payment milestones work?</h4>
-              <p>We work on a transparent milestone-based payment schedule tied directly to verified on-site progress (e.g. Deposit booking, completion of wet masonry, completion of rough-in piping/cabling, completion of tiling, and final defect handover). You never pay in advance for unfinished milestones.</p>
-            </div>
+                  <div className={`faq-answer-wrapper ${isOpen ? 'is-open' : ''}`}>
+                    <div className="faq-answer-inner">
+                      <p>{faq.a}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,0 +1,117 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Easing Curves
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out-back: cubic-bezier(0.34, 1.25, 0.64, 1);
+$ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+// Base Scroll Reveal State
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s $ease-out-expo, transform 0.75s $ease-out-expo;
+  will-change: opacity, transform;
+
+  &.revealed {
+    opacity: 1;
+    transform: none;
+
+    &:hover {
+      transition-delay: 0s !important;
+    }
+  }
+
+  // Directional & Scale Modifiers
+  &.reveal-scale {
+    transform: scale(0.96) translateY(20px);
+
+    &.revealed {
+      transform: none;
+    }
+  }
+
+  &.reveal-left {
+    transform: translateX(-30px);
+
+    &.revealed {
+      transform: none;
+    }
+  }
+
+  &.reveal-right {
+    transform: translateX(30px);
+
+    &.revealed {
+      transform: none;
+    }
+  }
+
+  &.reveal-fade {
+    transform: none;
+
+    &.revealed {
+      opacity: 1;
+    }
+  }
+}
+
+// Automatic Staggered Delays for Card Grids
+.services-grid,
+.gallery-grid,
+.timeline-grid,
+.step-cards-grid,
+.red-flags-grid,
+.boq-feature-list,
+.c2-features-grid,
+.detail-layout,
+.zone-tabs-grid,
+.prop-grid,
+.scope-grid,
+.direct-prop-pills,
+.direct-scope-list,
+.cards-grid-4,
+.cards-grid-3,
+.cards-grid-2,
+.cards-grid,
+.faq-grid,
+.scope-jump-pills,
+.stagger-group {
+  > .reveal-init,
+  > .service-card,
+  > .workmanship-card,
+  > .timeline-card,
+  > .step-card,
+  > .red-flag-card,
+  > .boq-feature-item,
+  > .c2-feature-card,
+  > .detail-content,
+  > .detail-media,
+  > .direct-prop-pill,
+  > .direct-scope-row,
+  > .zone-pill-card,
+  > .prop-card,
+  > .scope-checkbox-card,
+  > .info-card,
+  > .faq-card,
+  > .scope-jump-pill {
+    &:nth-child(1) { transition-delay: 0.04s; }
+    &:nth-child(2) { transition-delay: 0.12s; }
+    &:nth-child(3) { transition-delay: 0.20s; }
+    &:nth-child(4) { transition-delay: 0.28s; }
+    &:nth-child(5) { transition-delay: 0.36s; }
+    &:nth-child(6) { transition-delay: 0.44s; }
+    &:nth-child(7) { transition-delay: 0.52s; }
+    &:nth-child(8) { transition-delay: 0.60s; }
+  }
+}
+
+// Accessibility: Respect Users Preferring Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .reveal-init.revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

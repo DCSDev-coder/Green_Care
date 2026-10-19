@@ -8,7 +8,7 @@ import houseReno from '../assets/images/house-renovation.webp';
 import finisherImg from '../assets/images/finisher.webp';
 import glassImg from '../assets/images/glass-and-aluminium.webp';
 import c2Main from '../assets/images/c2-main.webp';
-import { ShieldCheck, CheckCircle2, ArrowRight, Eye, Wrench, Sparkles, Send } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Eye, Wrench, Sparkles, Send, MapPin } from 'lucide-react';
 
 const galleryItems = [
   {
@@ -39,20 +39,20 @@ const galleryItems = [
   },
   {
     id: 3,
-    category: 'structural',
-    stage: 'Structural Masonry',
-    title: 'Wet Kitchen Foundation Extension',
-    location: 'Eco Forest 2-Storey House',
-    status: 'RC Stiffeners Tied',
-    statusType: 'warning',
+    category: 'ceilings',
+    stage: 'Ceiling & Framing',
+    title: 'Acoustic Ceilings & Concealed Coves',
+    location: 'Cyberjaya High-Rise Apartment',
+    status: 'Laser Level Verified',
+    statusType: 'info',
     image: finisherImg,
-    description: 'Proper reinforced concrete lintel beams and damp-proof plastic membranes beneath the subfloor prevent ground dampness and cracked tiles.',
-    spec: 'Anti-crack rebar mesh & damp barrier membrane',
-    result: 'Solid Settlement Assured'
+    description: 'Concealed air-con trunking, curtain pelmets, and low-glare architectural cove lighting installed with zero sagging joints.',
+    spec: 'Galvanized iron (GI) framing & moisture-resistant boards',
+    result: 'Flush Seamless Ceiling'
   },
   {
     id: 4,
-    category: 'finishing',
+    category: 'tiling',
     stage: 'Finishing Works',
     title: 'Laser-Aligned Large Format Tiles',
     location: 'Living & Dining Floor Revamp',
@@ -65,7 +65,7 @@ const galleryItems = [
   },
   {
     id: 5,
-    category: 'carpentry',
+    category: 'joinery',
     stage: 'Custom Joinery',
     title: 'Aluminium Sliding Glass Partitions',
     location: 'Dry & Wet Kitchen Separator',
@@ -78,10 +78,10 @@ const galleryItems = [
   },
   {
     id: 6,
-    category: 'flagship',
-    stage: 'Completed Showcase',
+    category: 'joinery',
+    stage: 'Commercial Handover',
     title: 'C2 Coffee + Candle Handover',
-    location: 'Commercial Fit-Out Flagship',
+    location: 'Eco Forest, Semenyih',
     status: 'Flagship Delivered',
     statusType: 'success',
     image: c2Main,
@@ -91,65 +91,82 @@ const galleryItems = [
   }
 ];
 
-export default function WorkmanshipGallery() {
+export default function WorkmanshipGallery({ isHome = false }) {
   const [activeTab, setActiveTab] = useState('all');
 
-  const filteredItems = activeTab === 'all' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeTab);
+  const displayedItems = isHome
+    ? galleryItems.filter(item => [1, 2, 5].includes(item.id))
+    : (activeTab === 'all' 
+        ? galleryItems 
+        : galleryItems.filter(item => item.category === activeTab));
 
   return (
     <section id="workmanship" className="workmanship-section section">
       <div className="container">
         
         {/* Section Header */}
-        <div className="workmanship-header">
+        <div className={`workmanship-header ${isHome ? 'is-home-header' : ''}`}>
           <div className="header-text">
-            <span className="section-tag dark-tag">Behind-the-Scenes Transparency</span>
-            <h2 className="light">Our Workmanship In Action</h2>
-            <p className="light">
-              Anyone can download Pinterest 3D renders. We show you the actual on-site grit: our concealed piping, level brickwork, waterproof tests, and structural integrity before finishes are laid.
+            <h2>
+              {isHome ? (
+                <>Our Workmanship <span className="highlight-green">In Action</span></>
+              ) : (
+                <>Site Inspection & <span className="highlight-green">Workmanship Logs</span></>
+              )}
+            </h2>
+            <p className="header-desc">
+              {isHome 
+                ? 'Real on-site proof: physical flood tests, concealed conduit wiring, and custom joinery across Selangor & KL.'
+                : 'Detailed physical verification records across wet area waterproofing, electrical cabling, false ceilings, and commercial joinery.'}
             </p>
           </div>
 
-          {/* Filter Tabs */}
-          <div className="filter-tabs">
-            <button 
-              className={`filter-btn ${activeTab === 'all' ? 'active' : ''}`}
-              onClick={() => setActiveTab('all')}
-            >
-              All Progress ({galleryItems.length})
-            </button>
-            <button 
-              className={`filter-btn ${activeTab === 'waterproof' ? 'active' : ''}`}
-              onClick={() => setActiveTab('waterproof')}
-            >
-              Waterproofing
-            </button>
-            <button 
-              className={`filter-btn ${activeTab === 'electrical' ? 'active' : ''}`}
-              onClick={() => setActiveTab('electrical')}
-            >
-              M&E Wiring
-            </button>
-            <button 
-              className={`filter-btn ${activeTab === 'structural' ? 'active' : ''}`}
-              onClick={() => setActiveTab('structural')}
-            >
-              Wet Works
-            </button>
-            <button 
-              className={`filter-btn ${activeTab === 'flagship' ? 'active' : ''}`}
-              onClick={() => setActiveTab('flagship')}
-            >
-              C2 Cafe Handover
-            </button>
-          </div>
+          {/* Filter Tabs (Only shown on full Workmanship Page, hidden on Home Page for clean focus) */}
+          {!isHome && (
+            <div className="filter-tabs">
+              <button 
+                className={`filter-btn ${activeTab === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveTab('all')}
+              >
+                All Progress ({galleryItems.length})
+              </button>
+              <button 
+                className={`filter-btn ${activeTab === 'waterproof' ? 'active' : ''}`}
+                onClick={() => setActiveTab('waterproof')}
+              >
+                Waterproofing
+              </button>
+              <button 
+                className={`filter-btn ${activeTab === 'electrical' ? 'active' : ''}`}
+                onClick={() => setActiveTab('electrical')}
+              >
+                M&E Wiring
+              </button>
+              <button 
+                className={`filter-btn ${activeTab === 'ceilings' ? 'active' : ''}`}
+                onClick={() => setActiveTab('ceilings')}
+              >
+                False Ceilings
+              </button>
+              <button 
+                className={`filter-btn ${activeTab === 'tiling' ? 'active' : ''}`}
+                onClick={() => setActiveTab('tiling')}
+              >
+                Tile Alignment
+              </button>
+              <button 
+                className={`filter-btn ${activeTab === 'joinery' ? 'active' : ''}`}
+                onClick={() => setActiveTab('joinery')}
+              >
+                Joinery & Partitions
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Gallery Cards Grid */}
         <div className="gallery-grid">
-          {filteredItems.map((item) => (
+          {displayedItems.map((item) => (
             <div key={item.id} className="workmanship-card">
               
               <div className="card-media">
@@ -164,7 +181,10 @@ export default function WorkmanshipGallery() {
 
               <div className="card-details">
                 <div className="location-row">
-                  <span className="location-name">📍 {item.location}</span>
+                  <span className="location-name">
+                    <MapPin size={13} className="pin-icon" />
+                    <span>{item.location}</span>
+                  </span>
                 </div>
                 
                 <h3 className="card-title">{item.title}</h3>
@@ -190,11 +210,11 @@ export default function WorkmanshipGallery() {
         <div className="plan-review-banner">
           <div className="banner-info">
             <div className="icon-badge">
-              <Sparkles size={24} />
+              <Sparkles size={22} />
             </div>
             <div>
-              <h4>Have an architectural floor plan for your new house?</h4>
-              <p>Submit your floor plan. Our team will review the layout, wet kitchen feasibility, and potential hacking points free of charge.</p>
+              <h4>Have an architectural floor plan or layout?</h4>
+              <p>Submit your floor plan. Our team will review the space planning, wet area feasibility, and potential hacking points free of charge.</p>
             </div>
           </div>
 
@@ -202,7 +222,7 @@ export default function WorkmanshipGallery() {
             href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20have%20a%20floor%20plan%20to%20review%20for%20renovation"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary banner-btn"
+            className="btn btn-dark-green banner-btn"
           >
             <Send size={15} />
             <span>Submit Floor Plan for Review</span>

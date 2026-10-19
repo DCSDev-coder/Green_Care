@@ -1,89 +1,127 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.scss';
-import c2Img from '../assets/images/c2-main.webp';
-import { CheckCircle2, ShieldCheck, ArrowRight, Eye, Hammer, MapPin, Calculator } from 'lucide-react';
+import heroBannerImg from '../assets/images/Home-page-scaled.webp';
+import { ShieldCheck, ArrowRight, Calculator, CheckCircle2, MapPin, Sparkles, Hammer } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section 
-      className="hero-section"
-      style={{
-        backgroundImage: `linear-gradient(180deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.72) 45%, rgba(15, 23, 42, 0.94) 100%), url(${c2Img})`
-      }}
-    >
-      <div className="hero-backdrop"></div>
-      
+    <section className="hero-section">
+      <div className="hero-glow-blob top-center"></div>
+
       <div className="container hero-container">
-        <div className="hero-center-content">
-
-          <h1 className="hero-title">
-            Quality Home Renovation. <br />
-            <span className="gradient-text">Zero Shoddy Workmanship.</span>
-          </h1>
-
-          <p className="hero-description">
-            From landed kitchen extensions and porch structural works to clean condo interior fit-outs. We share transparent on-site photo logs at every milestone—no hidden variations, zero shortcuts.
-          </p>
-
-          {/* 3 Pillar Cards (Horizontal 3-Column Layout) */}
-          <div className="hero-guarantees">
-            <div className="guarantee-card">
-              <div className="icon-wrapper">
-                <CheckCircle2 size={18} />
-              </div>
-              <div className="guarantee-text">
-                <strong>Itemized BOQ</strong>
-                <p>Line-by-line pricing, no surprise bills</p>
-              </div>
+        
+        {/* Main 2-Column Split: Content on Left, Visual Banner Card Right Beside */}
+        <div className="hero-main-grid">
+          
+          {/* Left Column: Brand, Subtitle & Actions */}
+          <div className="hero-content-block">
+            {/* Minimalist Top Tag Row */}
+            <div className="hero-badge-row">
+              <span className="hero-badge">Selangor & KL Residential Specialists</span>
+              <span className="hero-subtag">Plan • Design • Build</span>
             </div>
 
-            <div className="guarantee-card">
-              <div className="icon-wrapper">
-                <Hammer size={18} />
-              </div>
-              <div className="guarantee-text">
-                <strong>Direct Supervision</strong>
-                <p>Weekly on-site photo & video logs</p>
-              </div>
-            </div>
+            {/* Inspiring, Modern Typographic Headline */}
+            <h1 className="hero-heading">
+              Built Right, The First Time. <br className="hero-br" />
+              <span className="text-emerald-gradient">Transparent Home Renovations.</span>
+            </h1>
 
-            <div className="guarantee-card">
-              <div className="icon-wrapper">
-                <ShieldCheck size={18} />
-              </div>
-              <div className="guarantee-text">
-                <strong>Workmanship Warranty</strong>
-                <p>Post-handover defect liability cover</p>
-              </div>
+            {/* Clear, Simple Subtitle */}
+            <p className="hero-lead">
+              From landed kitchen extensions to turnkey condo fit-outs. We build with itemized line-by-line BOQs, weekly on-site photo logs, and mandatory 72-hour waterproofing verification.
+            </p>
+
+            {/* Clean Action Buttons */}
+            <div className="hero-actions">
+              <Link to="/contact" className="btn btn-hero-primary">
+                <span>Book Free Site Inspection</span>
+                <ArrowRight size={16} />
+              </Link>
+
+              <Link to="/calculator" className="btn btn-hero-secondary">
+                <Calculator size={16} />
+                <span>Estimate Renovation Budget</span>
+              </Link>
             </div>
           </div>
 
-          {/* Hero Action Buttons */}
-          <div className="hero-actions">
-            <Link to="/contact" className="btn btn-primary">
-              <span>Book Free Site Inspection</span>
-              <ArrowRight size={16} />
-            </Link>
+          {/* Right Column: Visual Architectural Card Right Beside */}
+          <div className="hero-visual-block">
+            <div className="banner-card">
+              <img 
+                src={heroBannerImg} 
+                alt="Green Cares Specialists Residential Home Renovation & Architecture Banner" 
+                className="banner-img"
+              />
+              <div className="banner-overlay"></div>
 
-            <Link to="/calculator" className="btn btn-glass">
-              <Calculator size={16} />
-              <span>Calculate Renovation Budget</span>
-            </Link>
+              {/* Floating Proof Badges */}
+              <div className="floating-badge top-badge">
+                <div className="badge-icon">
+                  <Sparkles size={14} />
+                </div>
+                <div>
+                  <span className="floating-title">120+ Homes Renovated</span>
+                  <span className="floating-sub">Zero shortcuts · 100% On-Time</span>
+                </div>
+              </div>
 
-            <Link to="/workmanship" className="btn btn-outline-glass">
-              <Eye size={16} />
-              <span>View On-Site Workmanship</span>
-            </Link>
-          </div>
-
-          {/* Geographic Coverage */}
-          <div className="hero-location-bar">
-            <MapPin size={15} />
-            <span>Eco Forest HQ, Semenyih · Serving Semenyih, Kajang, Bangi, Cheras, PJ, KL & wider Selangor</span>
+              <div className="floating-badge bottom-badge">
+                <div className="badge-icon success">
+                  <CheckCircle2 size={16} />
+                </div>
+                <div>
+                  <span className="floating-title">72-Hour Water Ponding Test</span>
+                  <span className="floating-sub">Mandatory leak-proof verification</span>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
+
+        {/* 3-Pillar Guarantees & Location Underneath Banner */}
+        <div className="hero-footer-bar">
+          <div className="hero-trust-bar">
+            <div className="trust-item">
+              <div className="trust-icon">
+                <CheckCircle2 size={16} />
+              </div>
+              <div>
+                <strong>Itemized BOQ</strong>
+                <span>Line-by-line pricing</span>
+              </div>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">
+                <Hammer size={16} />
+              </div>
+              <div>
+                <strong>Direct Supervision</strong>
+                <span>Weekly on-site photo logs</span>
+              </div>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">
+                <ShieldCheck size={16} />
+              </div>
+              <div>
+                <strong>12-Mo Warranty</strong>
+                <span>Defect liability cover</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-location">
+            <MapPin size={14} />
+            <span>Eco Forest HQ, Semenyih · Serving Kajang, Bangi, Cheras, PJ & Klang Valley</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );
