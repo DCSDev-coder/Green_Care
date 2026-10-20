@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss';
 import gcsBrandLogo from '../assets/images/gcs-brand-logo-transparent.png';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ShieldCheck, MapPin, Phone, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,18 +20,33 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Notification Bar */}
+      {/* Top Announcement Bar */}
       <div className="top-banner">
         <div className="container banner-inner">
           <div className="banner-left">
-            <span className="pulse-dot"></span>
-            <strong>Green Cares Specialists</strong>
-            <span className="divider">|</span>
-            <span>Residential Home Renovation & Wet Works</span>
+            <span className="brand-badge-pill">
+              <ShieldCheck size={13} className="pill-icon" />
+              <span>CIDB Licensed & Supervised</span>
+            </span>
+            <span className="banner-divider">/</span>
+            <span className="banner-text">
+              <strong>Green Cares Specialists</strong>
+              <span className="sub-text">· Residential Renovation & Wet Works</span>
+            </span>
           </div>
+
           <div className="banner-right">
-            <span className="badge">HQ: Eco Forest, Semenyih</span>
-            <span className="coverage">Serving Semenyih, Kajang & Klang Valley</span>
+            <div className="banner-item">
+              <MapPin size={13} className="item-icon" />
+              <span>Eco Forest HQ, Semenyih</span>
+            </div>
+            <span className="banner-divider">•</span>
+            <span className="coverage-text">Kajang, Bangi & Klang Valley</span>
+            <span className="banner-divider">•</span>
+            <a href="tel:+60378000511" className="banner-link">
+              <Phone size={13} className="item-icon" />
+              <span>03-7800 0511</span>
+            </a>
           </div>
         </div>
       </div>
@@ -42,7 +57,11 @@ export default function Navbar() {
           
           {/* Logo Brand on Header */}
           <Link to="/" className="brand-logo" onClick={closeMenu}>
-            <img src={gcsBrandLogo} alt="GCS Plan Design Build - Transformation & Renovation" className="logo-img" />
+            <img 
+              src={gcsBrandLogo} 
+              alt="GCS Plan Design Build - Transformation & Renovation" 
+              className="logo-img" 
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -70,7 +89,8 @@ export default function Navbar() {
           {/* Desktop Consultation CTA & Mobile Toggle */}
           <div className="header-actions">
             <Link to="/contact" className="btn btn-nav-cta">
-              Book Consultation
+              <span>Book Consultation</span>
+              <ArrowRight size={14} className="cta-arrow" />
             </Link>
 
             <button 
@@ -93,6 +113,7 @@ export default function Navbar() {
             <Link to="/process" onClick={closeMenu}>5-Step Transparent Process</Link>
             <Link to="/calculator" onClick={closeMenu}>Renovation Budget Calculator</Link>
             <Link to="/contact" onClick={closeMenu}>Office HQ & Coverage</Link>
+
             <div className="mobile-cta-box">
               <a 
                 href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20inquire%20about%20renovating%20my%20home"

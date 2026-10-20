@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import HomeServices from '../components/HomeServices';
 import HomeProof from '../components/HomeProof';
 import HomeProcess from '../components/HomeProcess';
@@ -12,7 +13,10 @@ export default function HomePage() {
       {/* 1. Hero Showcase: Bold Typography, Proof Card & Guarantees */}
       <Hero />
 
-      {/* 2. Core Residential Specializations: Modern 4-Card Grid */}
+      {/* 2. Interactive Real Site Before & After Transformation Slider */}
+      <BeforeAfterSlider />
+
+      {/* 3. Core Residential Specializations: Modern 4-Card Grid */}
       <HomeServices />
 
       {/* 3. Real Proof & Quality Standards: 3 Curated Execution Cards */}

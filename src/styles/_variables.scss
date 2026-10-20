@@ -48,3 +48,13 @@ $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.0
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
 $shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 $shadow-emerald: 0 10px 25px -5px rgba(5, 150, 105, 0.25);
+$shadow-card-elevated: 0 12px 32px -6px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+$shadow-card-hover: 0 22px 38px -8px rgba(5, 150, 105, 0.14), 0 8px 18px -4px rgba(15, 23, 42, 0.06);
+
+// Gradients & Surface Accents
+$gradient-emerald-hero: linear-gradient(135deg, #064e3b 0%, #065f46 60%, #047857 100%);
+$gradient-emerald-mesh: radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.25) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(52, 211, 153, 0.18) 0%, transparent 40%), linear-gradient(135deg, #064e3b 0%, #065f46 65%, #047857 100%);
+$gradient-surface-soft: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+$gradient-card-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.85) 100%);
+$border-card-subtle: rgba(226, 232, 240, 0.9);
+

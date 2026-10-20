@@ -78,24 +78,26 @@
   }
 
   .process-step-item {
-    background: #f8fafc;
-    border: 1px solid $slate-200;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
     border-radius: $radius-xl;
-    padding: 1.75rem;
+    padding: 2rem 1.75rem;
     display: flex;
     flex-direction: column;
     position: relative;
+    box-shadow: $shadow-card-elevated;
     @include smooth-transition;
 
     &:hover {
       background: #ffffff;
-      border-color: rgba(16, 185, 129, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      border-color: rgba(16, 185, 129, 0.45);
+      transform: translateY(-5px);
+      box-shadow: $shadow-card-hover;
 
       .step-icon-wrap {
-        background: $primary;
+        background: #059669;
         color: #ffffff;
+        border-color: #059669;
       }
     }
 

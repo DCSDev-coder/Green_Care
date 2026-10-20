@@ -61,6 +61,7 @@ export default function ContactPage() {
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container page-hero-inner">
+          <span className="page-badge">Direct Consultations & HQ Base</span>
           <h1>Contact Us & Service Coverage</h1>
           <p>
             Schedule a free on-site property inspection, visit our headquarters in Eco Forest Semenyih, or consult directly with our renovation project supervisors.
