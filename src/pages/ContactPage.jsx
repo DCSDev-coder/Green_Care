@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import CoverageHQ from '../components/CoverageHQ';
-import { Send, MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle, Sparkles } from 'lucide-react';
 
 export default function ContactPage() {
+  const routerLocation = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -13,7 +15,34 @@ export default function ContactPage() {
     message: ''
   });
 
+  const [fromQuiz, setFromQuiz] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Check if routed with quiz data or in session
+    const quizData = routerLocation.state?.quizData || (() => {
+      try {
+        const stored = sessionStorage.getItem('greencares_quiz_answers') || localStorage.getItem('greencares_quiz_answers');
+        return stored ? JSON.parse(stored) : null;
+      } catch {
+        return null;
+      }
+    })();
+
+    if (quizData && (routerLocation.state?.fromQuiz || quizData.propertyType)) {
+      setFormData(prev => ({
+        ...prev,
+        propertyType: quizData.propertyType || prev.propertyType,
+        location: quizData.location || prev.location,
+        scope: quizData.scope || (quizData.selectedScopes && quizData.selectedScopes[0]) || prev.scope,
+        targetDate: quizData.targetDate || quizData.timeline || prev.targetDate,
+        message: prev.message || (quizData.budget ? `[From Renovation Matcher] Target Budget: ${quizData.budget}. All Scopes: ${(quizData.selectedScopes || []).join(', ')}` : '')
+      }));
+      if (routerLocation.state?.fromQuiz) {
+        setFromQuiz(true);
+      }
+    }
+  }, [routerLocation]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -52,6 +81,13 @@ export default function ContactPage() {
                 <p className="form-subtitle">
                   Fill in your property details below. Our team will review your requirements and reach out to you within 24 hours.
                 </p>
+
+                {fromQuiz && (
+                  <div style={{ marginBottom: '1.25rem', padding: '0.85rem 1rem', background: '#ecfdf5', border: '1px solid #10b981', borderRadius: '10px', color: '#065f46', fontSize: '0.825rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                    <Sparkles size={18} className="text-emerald-600" style={{ flexShrink: 0 }} />
+                    <span><strong>Preferences Loaded:</strong> We've pre-filled your details from the Renovation Matcher Questionnaire!</span>
+                  </div>
+                )}
 
                 {submitted && (
                   <div style={{ marginBottom: '1.5rem', padding: '1rem', background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '10px', color: '#065f46', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

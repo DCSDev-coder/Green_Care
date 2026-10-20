@@ -7,6 +7,7 @@ import ScrollRevealManager from './components/ScrollRevealManager';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollTopButton from './components/ScrollTopButton';
+import WelcomeQuestionnaire from './components/WelcomeQuestionnaire';
 
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -38,6 +39,7 @@ export default function App() {
         </main>
         <Footer />
         <ScrollTopButton />
+        <WelcomeQuestionnaire />
       </div>
     </Router>
   );
