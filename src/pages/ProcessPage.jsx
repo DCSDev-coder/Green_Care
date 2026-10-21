@@ -10,7 +10,6 @@ export default function ProcessPage() {
       {/* Page Hero - matches other internal pages */}
       <div className="page-hero">
         <div className="container page-hero-inner">
-          <span className="page-badge">Zero Disappeared Contractors</span>
           <h1>Our 5-Step Transparent Process</h1>
           <p>
             Renovating your home should bring excitement, not anxiety. Here is how we manage every stage from the initial tape measurement to defect handover.

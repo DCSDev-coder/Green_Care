@@ -78,45 +78,23 @@
 
   .home-service-card {
     background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1px solid $slate-200;
     border-radius: $radius-xl;
-    padding: 2rem 1.75rem;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
     position: relative;
-    box-shadow: $shadow-card-elevated;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
     @include smooth-transition;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
 
     &:hover {
-      border-color: rgba(16, 185, 129, 0.45);
-      transform: translateY(-5px);
-      box-shadow: $shadow-card-hover;
-
-      &::before {
-        opacity: 1;
-      }
+      border-color: rgba(16, 185, 129, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(16, 185, 129, 0.08);
 
       .service-link {
         color: $primary-dark;
         gap: 0.55rem;
-      }
-
-      .service-icon-wrap {
-        background: #059669;
-        color: #ffffff;
       }
     }
 

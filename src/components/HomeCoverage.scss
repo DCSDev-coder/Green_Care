@@ -12,14 +12,14 @@
 
   .coverage-card {
     background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1px solid $slate-200;
     border-radius: $radius-2xl;
     padding: 3.5rem;
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 3.5rem;
     align-items: center;
-    box-shadow: $shadow-card-elevated;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
     @include laptop {
       padding: 2.5rem;

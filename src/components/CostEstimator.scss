@@ -523,15 +523,13 @@
 
   // Right Side: Clean Result Panel
   .direct-calc-summary {
-    background: radial-gradient(circle at 85% 15%, rgba(52, 211, 153, 0.2) 0%, transparent 50%), linear-gradient(145deg, #064e3b 0%, #065f46 65%, #047857 100%);
+    background: #064e3b; /* Pure solid brand green */
     color: $white;
-    padding: 2.85rem 2.35rem;
+    padding: 2.75rem 2.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-    position: relative;
-    overflow: hidden;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 
     @include mobile {
       padding: 1.75rem 1.25rem;

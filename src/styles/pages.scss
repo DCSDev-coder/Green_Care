@@ -14,41 +14,19 @@
 
 // Internal Page Header Hero
 .page-hero {
-  background: $gradient-emerald-mesh;
+  background: #064e3b; /* Solid brand green */
   color: $white;
-  padding: 5rem 0 3.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
-    background-size: 26px 26px;
-    opacity: 0.55;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    right: 10%;
-    width: 280px;
-    height: 140px;
-    background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%);
-    pointer-events: none;
-    filter: blur(40px);
-  }
-
   @include mobile {
-    padding: 3.25rem 0 2.5rem;
+    padding: 3rem 0 2.5rem;
   }
 
   .page-hero-inner {
-    max-width: 860px;
+    max-width: 840px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -60,29 +38,25 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #a7f3d0;
-    font-size: 0.76rem;
+    background: rgba($primary, 0.2);
+    border: 1px solid rgba($primary, 0.4);
+    color: #6ee7b7;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.38rem 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.85rem;
     border-radius: $radius-full;
-    margin-bottom: 1.15rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
   }
 
   h1 {
-    font-size: 2.85rem;
+    font-size: 2.75rem;
     font-weight: 800;
     color: $white;
-    letter-spacing: -0.035em;
-    line-height: 1.18;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 
     @include mobile {
       font-size: 2rem;
@@ -90,12 +64,11 @@
   }
 
   p {
-    font-size: 1.08rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.65;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
     max-width: 680px;
     margin: 0 auto;
-    font-weight: 400;
 
     @include mobile {
       font-size: 0.92rem;
@@ -103,44 +76,21 @@
   }
 }
 
-// Services Hero (Clean, modern, architectural)
+// Services Hero (Clean, modern, uncluttered)
 .services-hero {
-  background: $gradient-emerald-mesh;
+  background: #064e3b; /* Solid brand green */
   color: $white;
-  padding: 5rem 0 4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4.5rem 0 3.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   text-align: center;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
-    background-size: 26px 26px;
-    opacity: 0.55;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: 15%;
-    width: 320px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(52, 211, 153, 0.22) 0%, transparent 70%);
-    pointer-events: none;
-    filter: blur(50px);
-  }
 
   @include mobile {
-    padding: 3.25rem 0 2.5rem;
+    padding: 3rem 0 2.25rem;
   }
 
   .services-hero-inner {
-    max-width: 840px;
+    max-width: 820px;
     margin: 0 auto;
     position: relative;
     z-index: 10;
@@ -148,13 +98,12 @@
   }
 
   h1 {
-    font-size: 2.85rem;
+    font-size: 2.75rem;
     font-weight: 800;
     color: $white;
-    letter-spacing: -0.035em;
-    line-height: 1.18;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
     margin-bottom: 0.85rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 
     @include mobile {
       font-size: 2rem;
@@ -162,12 +111,11 @@
   }
 
   .services-hero-lead {
-    font-size: 1.08rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.65;
-    max-width: 640px;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 620px;
     margin: 0 auto 2.25rem;
-    font-weight: 400;
 
     @include mobile {
       font-size: 0.92rem;
@@ -181,71 +129,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.85rem;
-  }
-}
-
-// Services Quick Category Navigation Bar
-.services-quick-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid $slate-200;
-  padding: 0.75rem 0;
-  position: sticky;
-  top: 72px;
-  z-index: 30;
-
-  .quick-nav-pills {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 0.2rem 0;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    .quick-nav-pill {
-      white-space: nowrap;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: $slate-700;
-      background: $slate-50;
-      border: 1px solid $slate-200;
-      padding: 0.42rem 0.95rem;
-      border-radius: $radius-full;
-      text-decoration: none;
-      @include smooth-transition;
-
-      &:hover {
-        background: #ecfdf5;
-        border-color: rgba(16, 185, 129, 0.4);
-        color: #047857;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
-      }
-    }
-  }
-}
-
-// Service Spec Chips
-.service-spec-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1.15rem;
-
-  .spec-chip {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: #065f46;
-    background: #ecfdf5;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    padding: 0.22rem 0.65rem;
-    border-radius: $radius-full;
   }
 }
 
@@ -696,69 +579,6 @@
 
   &.muted-bg {
     background: $slate-50;
-  }
-
-  // Budget breakdown infographic styling
-  &.budget-card {
-    border-radius: $radius-xl;
-    box-shadow: $shadow-card-elevated;
-    background: $white;
-
-    &:hover {
-      box-shadow: $shadow-card-hover;
-      transform: translateY(-4px);
-    }
-
-    .budget-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-
-      .card-percentage {
-        margin-bottom: 0;
-
-        &.amber-accent {
-          color: #d97706;
-        }
-      }
-
-      .budget-icon-circle {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #ecfdf5;
-        color: $primary;
-        border: 1px solid rgba(16, 185, 129, 0.25);
-        @include flex-center;
-
-        &.amber-bg {
-          background: #fffbeb;
-          color: #d97706;
-          border-color: rgba(217, 119, 6, 0.25);
-        }
-      }
-    }
-
-    .budget-progress-track {
-      width: 100%;
-      height: 6px;
-      background: $slate-200;
-      border-radius: $radius-full;
-      margin-bottom: 1.15rem;
-      overflow: hidden;
-
-      .budget-progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-        border-radius: $radius-full;
-        transition: width 0.6s ease;
-
-        &.amber-bar {
-          background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
-        }
-      }
-    }
   }
 }
 
@@ -1547,27 +1367,25 @@
 .contact-form-wrapper {
   background: $white;
   border-radius: $radius-xl;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: $shadow-card-elevated;
-  padding: 2.75rem;
+  border: 1px solid $slate-200;
+  box-shadow: $shadow-xl;
+  padding: 2.5rem;
 
   @include mobile {
     padding: 1.5rem;
   }
 
   .form-title {
-    font-size: 1.55rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: $slate-900;
-    letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
   }
 
   .form-subtitle {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: $slate-500;
     margin-bottom: 2rem;
-    line-height: 1.55;
   }
 
   .form-group {
@@ -1580,15 +1398,15 @@
       color: $slate-700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.4rem;
     }
 
     input, select, textarea {
       width: 100%;
       padding: 0.85rem 1rem;
-      border: 1.5px solid $slate-200;
+      border: 1px solid $slate-300;
       border-radius: $radius-md;
-      font-size: 0.88rem;
+      font-size: 0.875rem;
       font-family: inherit;
       color: $slate-900;
       background: $slate-50;
@@ -1598,7 +1416,7 @@
         outline: none;
         border-color: $primary;
         background: $white;
-        box-shadow: 0 0 0 3px rgba($primary, 0.16);
+        box-shadow: 0 0 0 3px rgba($primary, 0.15);
       }
     }
 
@@ -1627,17 +1445,10 @@
 
   .office-info-card {
     background: $white;
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1px solid $slate-200;
     border-radius: $radius-xl;
-    padding: 2.25rem;
-    box-shadow: $shadow-card-elevated;
-    @include smooth-transition;
-
-    &:hover {
-      border-color: rgba(16, 185, 129, 0.4);
-      box-shadow: $shadow-card-hover;
-      transform: translateY(-3px);
-    }
+    padding: 2rem;
+    box-shadow: $shadow-md;
 
     .card-tag {
       font-size: 0.72rem;

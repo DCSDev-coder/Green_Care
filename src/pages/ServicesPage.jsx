@@ -48,7 +48,6 @@ export default function ServicesPage() {
       {/* Services Header Hero */}
       <div className="services-hero">
         <div className="container services-hero-inner">
-          <span className="page-badge">Expert Construction Services</span>
           <h1>Home Renovation Services</h1>
           
           <p className="services-hero-lead">
@@ -68,29 +67,6 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Interactive Quick Category Navigation Bar */}
-      <nav className="services-quick-nav" aria-label="Services Navigation">
-        <div className="container">
-          <div className="quick-nav-pills">
-            <a href="#condo" className="quick-nav-pill">
-              <span>01 · Condo Fit-Outs</span>
-            </a>
-            <a href="#waterproofing" className="quick-nav-pill">
-              <span>02 · 72h Waterproofing</span>
-            </a>
-            <a href="#joinery" className="quick-nav-pill">
-              <span>03 · Custom Carpentry & M&E</span>
-            </a>
-            <a href="#comparison" className="quick-nav-pill">
-              <span>04 · Standards vs Shortcuts</span>
-            </a>
-            <a href="#faqs" className="quick-nav-pill">
-              <span>05 · Homeowner FAQs</span>
-            </a>
-          </div>
-        </div>
-      </nav>
-
       {/* Service 1: Condo Fit-Outs */}
       <div id="condo" className="service-detail-section">
         <div className="container">
@@ -99,13 +75,6 @@ export default function ServicesPage() {
             <div className="detail-content">
               <span className="detail-tag">01 · High-Rise Living</span>
               <h2>Condominium & Apartment Fit-Outs</h2>
-              
-              <div className="service-spec-chips">
-                <span className="spec-chip">4–7 Weeks Turnkey</span>
-                <span className="spec-chip">JMB Permits Handled</span>
-                <span className="spec-chip">Acoustic IXPE Floor</span>
-              </div>
-
               <p className="detail-lead">
                 Renovating a high-rise in Klang Valley comes with strict Management Corporation (JMB/MC) rules. We manage paperwork, security deposits, and working hours with zero drama.
               </p>
@@ -186,13 +155,6 @@ export default function ServicesPage() {
             <div className="detail-content">
               <span className="detail-tag">02 · Wet Area Integrity</span>
               <h2>Bathroom Remodeling & 72-Hour Waterproofing</h2>
-              
-              <div className="service-spec-chips">
-                <span className="spec-chip">Mandatory 72-Hour Flood Test</span>
-                <span className="spec-chip">Dual PU + Cementitious Membrane</span>
-                <span className="spec-chip">Written Leak-Proof Guarantee</span>
-              </div>
-
               <p className="detail-lead">
                 Water leaks are the #1 source of contractor disputes in Malaysia. We treat waterproofing as an engineering discipline, never taking shortcuts over old cracked screed.
               </p>
@@ -267,13 +229,6 @@ export default function ServicesPage() {
             <div className="detail-content">
               <span className="detail-tag">03 · Joinery & Safety</span>
               <h2>Custom Carpentry & M&E Safety Rewiring</h2>
-              
-              <div className="service-spec-chips">
-                <span className="spec-chip">Workshop Direct Joinery</span>
-                <span className="spec-chip">SIRIM PVC Conduits</span>
-                <span className="spec-chip">3-Phase Balanced DB</span>
-              </div>
-
               <p className="detail-lead">
                 From durable kitchen cabinetry and floor-to-ceiling wardrobes to full 3-phase electrical upgrades that keep modern high-draw appliances safe.
               </p>
@@ -347,7 +302,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Comparison Section: Why Choose Green Cares */}
-      <section id="comparison" className="section bg-white comparison-section">
+      <section className="section bg-white comparison-section">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Direct Comparison</span>
@@ -513,7 +468,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section id="faqs" className="faq-section">
+      <section className="faq-section">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Homeowner FAQs</span>

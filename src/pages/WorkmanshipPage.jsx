@@ -1,7 +1,7 @@
 import React from 'react';
 import WorkmanshipGallery from '../components/WorkmanshipGallery';
 import c2Main from '../assets/images/c2-main.webp';
-import { ArrowRight, MapPin, Zap, Droplets, Layers, Video, ShieldCheck } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 
 export default function WorkmanshipPage() {
   return (
@@ -10,7 +10,6 @@ export default function WorkmanshipPage() {
       {/* Page Hero */}
       <div className="page-hero">
         <div className="container page-hero-inner">
-          <span className="page-badge">Engineering Transparency & QC</span>
           <h1>Site Workmanship & Proof of Execution</h1>
           <p>
             Verified on-site proof for waterproofing, concealed electrical safety, and architectural joinery across every project.
@@ -102,9 +101,7 @@ export default function WorkmanshipPage() {
             
             <div className="info-card">
               <div>
-                <div className="card-number">
-                  <Zap size={18} />
-                </div>
+                <div className="card-number">01</div>
                 <h4>No Diagonal Wall Chases</h4>
                 <p>
                   Electrical and plumbing wall chases are strictly vertical or horizontal with SIRIM-certified PVC conduits. This eliminates the danger of drilling into hidden wires when hanging future wall art.
@@ -115,9 +112,7 @@ export default function WorkmanshipPage() {
 
             <div className="info-card">
               <div>
-                <div className="card-number">
-                  <Droplets size={18} />
-                </div>
+                <div className="card-number">02</div>
                 <h4>Physical Flood Testing</h4>
                 <p>
                   Zero bathrooms or wet kitchen floors are tiled until a 72-hour standing water ponding test is formally inspected and signed off by our lead site supervisor.
@@ -128,9 +123,7 @@ export default function WorkmanshipPage() {
 
             <div className="info-card">
               <div>
-                <div className="card-number">
-                  <Layers size={18} />
-                </div>
+                <div className="card-number">03</div>
                 <h4>Full-Mortar Buttering</h4>
                 <p>
                   Large format tiles are 100% buttered on the back with polymer-modified adhesive mortar. We never spot-glue tiles, eliminating hollow clicks and popping tiles under heavy traffic.
@@ -141,9 +134,7 @@ export default function WorkmanshipPage() {
 
             <div className="info-card">
               <div>
-                <div className="card-number">
-                  <Video size={18} />
-                </div>
+                <div className="card-number">04</div>
                 <h4>Weekly On-Site Video Logs</h4>
                 <p>
                   You don't need to drive to the dusty site every evening after work. We send high-resolution photo and video logs of every concealed installation straight to your phone.
