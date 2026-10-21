@@ -219,7 +219,7 @@ export default function WorkmanshipGallery({ isHome = false }) {
           </div>
 
           <a 
-            href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20have%20a%20floor%20plan%20to%20review%20for%20renovation"
+            href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20have%20a%20floor%20plan%20to%20review%20for%20renovation"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-dark-green banner-btn"

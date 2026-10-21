@@ -27,12 +27,12 @@ export default function Footer() {
             </p>
 
             <div className="brand-contact-pills">
-              <a href="tel:+60378000511" className="contact-pill">
+              <a href="tel:+60126946907" className="contact-pill">
                 <Phone size={13} className="pill-icon" />
-                <span>03-7800 0511</span>
+                <span>+60 12-694 6907</span>
               </a>
               <a 
-                href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I'm%20inquiring%20about%20renovating%20my%20home" 
+                href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I'm%20inquiring%20about%20renovating%20my%20home" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="contact-pill whatsapp-pill"
@@ -47,12 +47,11 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Renovation Services</h4>
             <ul className="footer-nav-list">
-              <li><Link to="/services">Condo & Apartment Fit-Outs</Link></li>
-              <li><Link to="/services">Landed Wet Kitchen Extensions</Link></li>
-              <li><Link to="/services">72-Hour Waterproofing & Bathrooms</Link></li>
-              <li><Link to="/services">Custom Joinery & Kitchen Cabinets</Link></li>
-              <li><Link to="/services">3-Phase M&E Safety Rewiring</Link></li>
-              <li><Link to="/services">Plaster Ceilings & Lighting</Link></li>
+              <li><Link to="/services#landed">Landed Wet Kitchen Extensions</Link></li>
+              <li><Link to="/services#condo">Condo & Apartment Fit-Outs</Link></li>
+              <li><Link to="/services#waterproofing">72-Hour Waterproofing & Bathrooms</Link></li>
+              <li><Link to="/services#joinery">Custom Joinery & M&E Rewiring</Link></li>
+              <li><Link to="/calculator">Renovation Cost Calculator</Link></li>
             </ul>
           </div>
 

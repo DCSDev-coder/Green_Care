@@ -11,7 +11,7 @@ const homeServicesList = [
     title: 'Landed Wet Kitchen & Extensions',
     desc: 'Council-compliant structural extensions for terrace, semi-D, and bungalows. Solid RC slab casting, grease traps, and drainage correction.',
     pills: ['Reinforced RC Lintels', 'Grease Traps', 'Drainage Slope Correction'],
-    link: '/services'
+    link: '/services#landed'
   },
   {
     id: 'condo',
@@ -20,7 +20,7 @@ const homeServicesList = [
     title: 'Condo & Apartment Fit-Outs',
     desc: 'Hassle-free JMB-compliant renovations. Managing hacking deposits, scheduled work permits, acoustic SPC flooring, and ambient coves.',
     pills: ['JMB Permit Filing', 'Acoustic SPC Flooring', 'Ambient Cove Ceilings'],
-    link: '/services'
+    link: '/services#condo'
   },
   {
     id: 'waterproofing',
@@ -29,7 +29,7 @@ const homeServicesList = [
     title: 'Bathroom & 72-Hr Waterproofing',
     desc: 'End persistent ceiling leaks. Multi-layer polyurethane and cementitious waterproofing with mandatory 72-hour water ponding tests before tiling.',
     pills: ['72-Hr Ponding Test', '100% Leak-Proof', 'Rectified Floor Tiling'],
-    link: '/services'
+    link: '/services#waterproofing'
   },
   {
     id: 'joinery',
@@ -38,7 +38,7 @@ const homeServicesList = [
     title: 'Custom Joinery & M&E Rewiring',
     desc: 'Moisture-resistant kitchen cabinetry, powder-coated glass partitions, and full 3-phase DB upgrades with safety RCCB balancing.',
     pills: ['Custom Made-to-Measure', '3-Phase Safety Rewiring', 'Concealed AC Trunking'],
-    link: '/services'
+    link: '/services#joinery'
   }
 ];
 

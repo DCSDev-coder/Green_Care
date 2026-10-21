@@ -62,7 +62,7 @@ export default function WorkmanshipPage() {
 
               <div className="c2-actions">
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20saw%20your%20C2%20Cafe%20work%20and%20want%20to%20discuss%20my%20renovation" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20saw%20your%20C2%20Cafe%20work%20and%20want%20to%20discuss%20my%20renovation" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn btn-primary"

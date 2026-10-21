@@ -335,7 +335,7 @@ export default function WelcomeQuestionnaire() {
   // Handle WhatsApp Link
   const handleWhatsAppQuote = () => {
     const message = `Hello Green Cares Specialists!%0A%0AI just completed your website's Renovation Matcher Questionnaire:%0A%0A🏠 *Property:* ${propertyType}%0A📍 *Location:* ${location}%0A🔨 *Scopes Needed:* ${selectedScopes.join(', ')}%0A⏱️ *Timeline:* ${timeline}%0A💰 *Target Budget:* ${budget}%0A📊 *Indicative Estimate:* RM ${estimate.min.toLocaleString()} – RM ${estimate.max.toLocaleString()}%0A%0AI would like to schedule a free site inspection & get an itemized BOQ consultation.`;
-    window.open(`https://wa.me/60123456789?text=${message}`, '_blank');
+    window.open(`https://wa.me/60126946907?text=${message}`, '_blank');
   };
 
   // Handle Navigate to Contact Page with prefilled details

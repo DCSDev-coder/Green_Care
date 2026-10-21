@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './CostEstimator.scss';
 import { 
@@ -30,19 +30,112 @@ const scopeOptions = [
   { id: 'paint', label: 'Whole House Repainting', min: 3500, max: 6500, default: false }
 ];
 
+// Helper to resolve property ID from string values
+const resolvePropertyId = (input) => {
+  if (!input || typeof input !== 'string') return null;
+  const lower = input.toLowerCase().trim();
+  if (lower.includes('condo') || lower.includes('apartment') || lower.includes('high-rise') || lower.includes('flat')) {
+    return 'condo';
+  }
+  if (lower.includes('semi') || lower.includes('bungalow')) {
+    return 'semid';
+  }
+  if (lower.includes('townhouse') || lower.includes('cluster')) {
+    return 'townhouse';
+  }
+  if (lower.includes('terrace') || lower.includes('landed') || lower.includes('link')) {
+    return 'terrace';
+  }
+  return propertyOptions.some(p => p.id === lower) ? lower : null;
+};
+
+// Helper to extract property from React Router location
+const getPropertyFromLocation = (loc) => {
+  if (!loc) return null;
+  const stateVal = loc.state?.property || loc.state?.prop || loc.state?.propertyType || loc.state?.type;
+  if (stateVal) {
+    const resolved = resolvePropertyId(stateVal);
+    if (resolved) return resolved;
+  }
+  if (loc.search) {
+    const params = new URLSearchParams(loc.search);
+    const queryVal = params.get('property') || params.get('prop') || params.get('propertyType') || params.get('type');
+    if (queryVal) {
+      const resolved = resolvePropertyId(queryVal);
+      if (resolved) return resolved;
+    }
+  }
+  return null;
+};
+
+// Helper to extract scopes from React Router location
+const getScopesFromLocation = (loc) => {
+  if (!loc) return null;
+  const requestedScopes = [];
+  if (loc.state?.scopes && Array.isArray(loc.state.scopes)) {
+    requestedScopes.push(...loc.state.scopes);
+  } else if (loc.state?.scope && typeof loc.state.scope === 'string') {
+    requestedScopes.push(loc.state.scope);
+  }
+  if (loc.search) {
+    const params = new URLSearchParams(loc.search);
+    const qScopes = params.getAll('scopes');
+    const qScope = params.get('scope');
+    if (qScopes.length > 0) requestedScopes.push(...qScopes);
+    if (qScope) {
+      qScope.split(',').forEach(s => requestedScopes.push(s.trim()));
+    }
+  }
+  return requestedScopes.length > 0 ? requestedScopes : null;
+};
+
 export default function CostEstimator({ isPage: propIsPage }) {
   const location = useLocation();
   const isPage = propIsPage !== undefined ? propIsPage : location.pathname === '/calculator';
 
-  const [selectedProp, setSelectedProp] = useState('terrace');
-  const [selectedScopes, setSelectedScopes] = useState({
-    kitchen: true,
-    bath: true,
-    plaster: true,
-    flooring: false,
-    carpentry: false,
-    paint: false
+  const [selectedProp, setSelectedProp] = useState(() => {
+    return getPropertyFromLocation(location) || 'terrace';
   });
+
+  const [selectedScopes, setSelectedScopes] = useState(() => {
+    const initialScopes = {
+      kitchen: true,
+      bath: true,
+      plaster: true,
+      flooring: false,
+      carpentry: false,
+      paint: false
+    };
+    const incomingScopes = getScopesFromLocation(location);
+    if (incomingScopes) {
+      incomingScopes.forEach(s => {
+        if (s in initialScopes) {
+          initialScopes[s] = true;
+        }
+      });
+    }
+    return initialScopes;
+  });
+
+  // Sync state if navigation or query parameters change
+  useEffect(() => {
+    const propFromLoc = getPropertyFromLocation(location);
+    if (propFromLoc) {
+      setSelectedProp(propFromLoc);
+    }
+    const incomingScopes = getScopesFromLocation(location);
+    if (incomingScopes) {
+      setSelectedScopes(prev => {
+        const next = { ...prev };
+        incomingScopes.forEach(s => {
+          if (s in next) {
+            next[s] = true;
+          }
+        });
+        return next;
+      });
+    }
+  }, [location.search, location.state]);
 
   const toggleScope = (scopeId) => {
     setSelectedScopes(prev => ({
@@ -83,7 +176,7 @@ export default function CostEstimator({ isPage: propIsPage }) {
 
     const message = `Hello Green Cares Specialists!%0A%0AI used your website's Renovation Cost Estimator:%0A- Property: ${propConfig.name}%0A- Scopes: ${activeScopeLabels.join(', ') || 'General Consultation'}%0A- Estimated Range: RM ${totalMin.toLocaleString()} – RM ${totalMax.toLocaleString()}%0A%0AI would like to schedule a free site inspection.`;
 
-    window.open(`https://wa.me/60123456789?text=${message}`, '_blank');
+    window.open(`https://wa.me/60126946907?text=${message}`, '_blank');
   };
 
   // SIMPLE & DIRECT 2-COLUMN VIEW FOR CALCULATOR PAGE

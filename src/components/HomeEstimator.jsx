@@ -77,12 +77,16 @@ export default function HomeEstimator() {
               <span className="result-note">{current.desc} · Turnkey Execution</span>
 
               <div className="result-actions">
-                <Link to="/calculator" className="btn btn-calc-full">
+                <Link 
+                  to={`/calculator?property=${activeProp}`} 
+                  state={{ property: activeProp }} 
+                  className="btn btn-calc-full"
+                >
                   <span>Open Full Custom Calculator</span>
                   <ArrowRight size={15} />
                 </Link>
                 <a
-                  href={`https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I'm%20inquiring%20about%20a%20renovation%20budget%20for%20my%20${encodeURIComponent(current.name)}.`}
+                  href={`https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I'm%20inquiring%20about%20a%20renovation%20budget%20for%20my%20${encodeURIComponent(current.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-calc-wa"

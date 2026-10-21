@@ -51,7 +51,7 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const waText = `Hello Green Cares Specialists!%0A%0ANew Renovation Consultation Request:%0A- Name: ${formData.name}%0A- Phone: ${formData.phone}%0A- Property: ${formData.propertyType}%0A- Location: ${formData.location}%0A- Scope: ${formData.scope}%0A- Target Date: ${formData.targetDate}%0A- Notes: ${formData.message || 'None'}`;
-    window.open(`https://wa.me/60123456789?text=${waText}`, '_blank');
+    window.open(`https://wa.me/60126946907?text=${waText}`, '_blank');
     setSubmitted(true);
   };
 
@@ -210,8 +210,8 @@ export default function ContactPage() {
                   <div className="info-item">
                     <div className="item-icon"><Phone size={16} /></div>
                     <div>
-                      <strong>Landline Telephone</strong>
-                      <a href="tel:+60378000511">03-7800 0511</a>
+                      <strong>Direct Phone & WhatsApp</strong>
+                      <a href="tel:+60126946907">+60 12-694 6907</a>
                     </div>
                   </div>
 
@@ -253,7 +253,7 @@ export default function ContactPage() {
                   Our project team answers inquiries Monday to Saturday. Send us photos of your property or your architectural floor plan.
                 </p>
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20speak%20to%20a%20renovation%20supervisor" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20speak%20to%20a%20renovation%20supervisor" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-primary"

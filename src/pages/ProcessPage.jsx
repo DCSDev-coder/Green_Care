@@ -170,7 +170,7 @@ export default function ProcessPage() {
                   <span>Unclear line items?</span>
                 </div>
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20can%20you%20review%20my%20renovation%20quotation%20with%20me?" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20can%20you%20review%20my%20renovation%20quotation%20with%20me?" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-link"

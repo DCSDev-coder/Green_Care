@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import houseReno from '../assets/images/house-renovation.webp';
 import interiorDesign from '../assets/images/interior-design.webp';
 import plumbingWorks from '../assets/images/plumbing-works.webp';
 import c2Main from '../assets/images/c2-main.webp';
@@ -18,6 +19,10 @@ import {
 } from 'lucide-react';
 
 const FAQS = [
+  {
+    q: "Do you handle local council approvals for landed house extensions?",
+    a: "Yes. For landed extensions in Selangor and KL (MPKj, MPSepang, MBSJ, DBKL), we coordinate required architectural layout plans, engineer sign-offs, and authority submissions before hacking starts."
+  },
   {
     q: "How long does a typical condominium interior fit-out take?",
     a: "A comprehensive condo fit-out (including SPC flooring, plaster ceilings, lighting, and custom joinery) typically takes between 4 to 7 weeks, depending on JMB building management working hours and permit approvals."
@@ -51,7 +56,7 @@ export default function ServicesPage() {
           <h1>Home Renovation Services</h1>
           
           <p className="services-hero-lead">
-            Specialized condo fit-outs, 72-hour waterproofing, and custom joinery across Selangor & KL.
+            Specialized landed kitchen extensions, condo fit-outs, 72-hour waterproofing, and custom joinery across Selangor & KL.
           </p>
 
           <div className="services-hero-actions">
@@ -67,13 +72,93 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service 1: Condo Fit-Outs */}
-      <div id="condo" className="service-detail-section">
+      {/* Service 1: Landed Wet Kitchen Extensions */}
+      <div id="landed" className="service-detail-section">
         <div className="container">
           <div className="detail-layout">
             
             <div className="detail-content">
-              <span className="detail-tag">01 · High-Rise Living</span>
+              <span className="detail-tag">01 · Landed Properties</span>
+              <h2>Landed Wet Kitchen & Extensions</h2>
+              <p className="detail-lead">
+                Council-compliant structural extensions for terrace, semi-D, and bungalows. Solid reinforced concrete (RC) slab casting, lintel beams, grease traps, and drainage correction without future ground-settlement cracks.
+              </p>
+
+              <ul className="feature-list">
+                <li>
+                  <Check size={18} className="icon-check" />
+                  <div>
+                    <strong>Reinforced RC Slab & Ground-Beam Casting</strong>
+                    <p>Engineered to resist ground settlement cracks, with heavy-duty rebar tied securely into original building pillars.</p>
+                  </div>
+                </li>
+                <li>
+                  <Check size={18} className="icon-check" />
+                  <div>
+                    <strong>Commercial Grease Traps & Soil Piping Correction</strong>
+                    <p>Compliant with local council bylaws (MPKj, MPSepang, MBSJ, DBKL) preventing foul kitchen drainage blockages.</p>
+                  </div>
+                </li>
+                <li>
+                  <Check size={18} className="icon-check" />
+                  <div>
+                    <strong>Drainage Slope & Heavy Monsoon Rain Protection</strong>
+                    <p>Laser-aligned floor falls and concealed downpipes calibrated to handle heavy tropical flash storms with zero backflow.</p>
+                  </div>
+                </li>
+              </ul>
+
+              <div className="detail-actions">
+                <Link to="/calculator?property=terrace&scope=kitchen" state={{ property: 'terrace', scopes: ['kitchen'] }} className="btn btn-primary">
+                  <span>Estimate Landed Extension</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <a 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I'm%20planning%20a%20landed%20kitchen%20extension" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  <MessageCircle size={15} />
+                  <span>Ask Extension Questions</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="detail-media">
+              <div className="media-card">
+                <div className="media-img-wrap">
+                  <img src={houseReno} alt="Landed wet kitchen extension and structural renovation by Green Cares" className="media-img" />
+                  <div className="media-badge">
+                    <Camera size={12} />
+                    <span>Real Site Photo</span>
+                  </div>
+                </div>
+                <div className="media-caption">
+                  <div className="caption-header">
+                    <span className="caption-location">
+                      <MapPin size={12} />
+                      <span>Semenyih & Kajang Landed</span>
+                    </span>
+                    <span className="caption-status">RC Slab & Masonry</span>
+                  </div>
+                  <h4>Engineered Wet Kitchen Extension</h4>
+                  <p>Solid reinforced concrete slab, grease trap drainage, and complete masonry wet kitchen build.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Service 2: Condo Fit-Outs */}
+      <div id="condo" className="service-detail-section">
+        <div className="container">
+          <div className="detail-layout reverse">
+            
+            <div className="detail-content">
+              <span className="detail-tag">02 · High-Rise Living</span>
               <h2>Condominium & Apartment Fit-Outs</h2>
               <p className="detail-lead">
                 Renovating a high-rise in Klang Valley comes with strict Management Corporation (JMB/MC) rules. We manage paperwork, security deposits, and working hours with zero drama.
@@ -104,12 +189,12 @@ export default function ServicesPage() {
               </ul>
 
               <div className="detail-actions">
-                <Link to="/calculator" className="btn btn-primary">
+                <Link to="/calculator?property=condo" state={{ property: 'condo' }} className="btn btn-primary">
                   <span>Estimate Condo Fit-Out</span>
                   <ArrowRight size={14} />
                 </Link>
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I'm%20planning%20a%20condo%20renovation" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I'm%20planning%20a%20condo%20renovation" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
@@ -147,13 +232,13 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service 2: Bathroom & Waterproofing */}
+      {/* Service 3: Bathroom & Waterproofing */}
       <div id="waterproofing" className="service-detail-section">
         <div className="container">
-          <div className="detail-layout reverse">
+          <div className="detail-layout">
             
             <div className="detail-content">
-              <span className="detail-tag">02 · Wet Area Integrity</span>
+              <span className="detail-tag">03 · Wet Area Integrity</span>
               <h2>Bathroom Remodeling & 72-Hour Waterproofing</h2>
               <p className="detail-lead">
                 Water leaks are the #1 source of contractor disputes in Malaysia. We treat waterproofing as an engineering discipline, never taking shortcuts over old cracked screed.
@@ -184,7 +269,7 @@ export default function ServicesPage() {
               </ul>
 
               <div className="detail-actions">
-                <Link to="/calculator" className="btn btn-primary">
+                <Link to="/calculator?scope=bath" state={{ scope: 'bath' }} className="btn btn-primary">
                   <span>Estimate Bathroom Remodel</span>
                   <ArrowRight size={14} />
                 </Link>
@@ -221,13 +306,13 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Service 3: Custom Carpentry & M&E */}
+      {/* Service 4: Custom Carpentry & M&E */}
       <div id="joinery" className="service-detail-section">
         <div className="container">
-          <div className="detail-layout">
+          <div className="detail-layout reverse">
             
             <div className="detail-content">
-              <span className="detail-tag">03 · Joinery & Safety</span>
+              <span className="detail-tag">04 · Joinery & Safety</span>
               <h2>Custom Carpentry & M&E Safety Rewiring</h2>
               <p className="detail-lead">
                 From durable kitchen cabinetry and floor-to-ceiling wardrobes to full 3-phase electrical upgrades that keep modern high-draw appliances safe.
@@ -258,12 +343,12 @@ export default function ServicesPage() {
               </ul>
 
               <div className="detail-actions">
-                <Link to="/calculator" className="btn btn-primary">
+                <Link to="/calculator?scope=carpentry" state={{ scope: 'carpentry' }} className="btn btn-primary">
                   <span>Calculate Custom Carpentry</span>
                   <ArrowRight size={14} />
                 </Link>
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20need%20custom%20cabinets%20and%20wiring" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20need%20custom%20cabinets%20and%20wiring" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-secondary"

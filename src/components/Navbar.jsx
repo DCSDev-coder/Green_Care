@@ -43,9 +43,9 @@ export default function Navbar() {
             <span className="banner-divider">•</span>
             <span className="coverage-text">Kajang, Bangi & Klang Valley</span>
             <span className="banner-divider">•</span>
-            <a href="tel:+60378000511" className="banner-link">
+            <a href="tel:+60126946907" className="banner-link">
               <Phone size={13} className="item-icon" />
-              <span>03-7800 0511</span>
+              <span>+60 12-694 6907</span>
             </a>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function Navbar() {
 
             <div className="mobile-cta-box">
               <a 
-                href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20inquire%20about%20renovating%20my%20home"
+                href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20inquire%20about%20renovating%20my%20home"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp full-width"

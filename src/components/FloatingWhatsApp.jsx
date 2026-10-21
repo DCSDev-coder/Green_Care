@@ -6,7 +6,7 @@ export default function FloatingWhatsApp() {
   return (
     <div className="floating-whatsapp-container">
       <a 
-        href="https://wa.me/60123456789?text=Hi%20Green%20Cares%20Specialists,%20I'm%20looking%20for%20a%20quotation%20for%20my%20home%20renovation" 
+        href="https://wa.me/60126946907?text=Hi%20Green%20Cares%20Specialists,%20I'm%20looking%20for%20a%20quotation%20for%20my%20home%20renovation" 
         target="_blank" 
         rel="noopener noreferrer"
         className="floating-btn"

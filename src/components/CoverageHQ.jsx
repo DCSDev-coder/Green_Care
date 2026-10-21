@@ -153,7 +153,7 @@ export default function CoverageHQ() {
 
               <div className="zone-footer-action">
                 <a 
-                  href={`https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20have%20a%20property%20in%20${encodeURIComponent(activeZone.area)}%20and%20would%20like%20to%20schedule%20a%20site%20inspection`}
+                  href={`https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20have%20a%20property%20in%20${encodeURIComponent(activeZone.area)}%20and%20would%20like%20to%20schedule%20a%20site%20inspection`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-zone-action"
@@ -193,8 +193,8 @@ export default function CoverageHQ() {
                 <div className="detail-row">
                   <div className="detail-icon"><Phone size={16} /></div>
                   <div>
-                    <label>Office Telephone</label>
-                    <a href="tel:+60378000511">03-7800 0511</a>
+                    <label>Direct Phone & WhatsApp</label>
+                    <a href="tel:+60126946907">+60 12-694 6907</a>
                   </div>
                 </div>
 
@@ -217,7 +217,7 @@ export default function CoverageHQ() {
 
               <div className="contact-cta-box">
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20visit%20your%20office%20at%20Eco%20Forest" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I%20would%20like%20to%20visit%20your%20office%20at%20Eco%20Forest" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-dark-green full-width"

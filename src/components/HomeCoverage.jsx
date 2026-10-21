@@ -64,13 +64,13 @@ export default function HomeCoverage() {
                 </Link>
 
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Green%20Cares,%20I'd%20like%20to%20schedule%20a%20site%20inspection%20for%20my%20home" 
+                  href="https://wa.me/60126946907?text=Hi%20Green%20Cares,%20I'd%20like%20to%20schedule%20a%20site%20inspection%20for%20my%20home" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn btn-cta-wa"
                 >
                   <MessageCircle size={15} />
-                  <span>WhatsApp 03-7800 0511</span>
+                  <span>WhatsApp +60 12-694 6907</span>
                 </a>
               </div>
             </div>
