@@ -10,32 +10,32 @@ const proofCards = [
   {
     id: 1,
     image: proj1,
-    badge: 'Verified Leak-Proof ✓',
+    badge: '100% Leak-Proof ✓',
     badgeType: 'emerald',
-    title: '72-Hour Water Ponding Verification',
+    title: '72-Hour Bathroom Leak Test',
     location: 'Terrace House · Semenyih',
-    desc: 'We fill every remodeled bathroom and wet kitchen slab with water for 72 continuous hours before tiling to physically verify zero seepage to the ceiling below.',
-    spec: 'Multi-layer PU + Cementitious Membrane'
+    desc: 'We fill every remodeled bathroom and wet kitchen floor with water for 72 continuous hours before laying tiles to physically prove zero water leaks to the ceiling below.',
+    spec: 'Heavy-Duty Multi-Layer Waterproof Membrane'
   },
   {
     id: 2,
     image: proj4,
-    badge: 'SIRIM Heavy-Duty PVC ✓',
+    badge: 'SIRIM-Certified Pipes ✓',
     badgeType: 'teal',
-    title: 'Concealed 3-Phase M&E Conduit Chasing',
+    title: 'Neat In-Wall 3-Phase Electrical Wiring',
     location: 'Semi-D Renovation · Kajang',
-    desc: 'Neat laser-straight horizontal and vertical wall chasing using high-grade conduits. No diagonal shortcuts, exposed wiring, or dangerous buried wire joints.',
-    spec: 'Dedicated Safety RCCB Tripping & Balance'
+    desc: 'Laser-straight pipes hidden safely inside brick walls. No messy exposed cables, dangerous shortcuts, or buried loose wire joints.',
+    spec: 'Safety Circuit Breakers with Trip Protection'
   },
   {
     id: 3,
     image: finisherImg,
-    badge: 'Laser-Aligned Level ✓',
+    badge: 'Laser-Level Flat ✓',
     badgeType: 'slate',
-    title: 'Flush Ceilings & Large-Format Tiling',
+    title: 'Smooth Plaster Ceilings & Solid Tiling',
     location: 'Condo Fit-Out · Cyberjaya',
-    desc: 'Galvanized iron framing with moisture-resistant boards for zero sagging. Seamless low-glare LED cove lighting and hollow-free tile screeding.',
-    spec: 'Galvanized Iron Framing & Anti-Hollow Mortar'
+    desc: 'Heavy-duty rust-proof ceiling metal frames that never sag. Beautiful low-glare warm LED cove lights and solid, 100% non-hollow floor tiles.',
+    spec: 'Rust-Proof Metal Frames & Anti-Hollow Solid Tiling'
   }
 ];
 

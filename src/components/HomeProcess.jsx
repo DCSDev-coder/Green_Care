@@ -8,29 +8,29 @@ const processSteps = [
     num: '01',
     icon: Ruler,
     title: 'Free On-Site Inspection',
-    tag: 'Day 1 · No Obligation',
-    desc: 'Laser measurements, moisture evaluation, and practical spatial planning on-site at your property.'
+    tag: 'Day 1 · 100% Free & No Obligation',
+    desc: 'We visit your property for precise laser measurements, moisture and leak checks, and practical spatial planning advice.'
   },
   {
     num: '02',
     icon: FileText,
-    title: 'Line-by-Line BOQ',
-    tag: '3-5 Days · Price Lock',
-    desc: 'Itemized material specs, quantities, and transparent line items. Zero vague lump sums or surprises.'
+    title: 'Detailed Itemized Quotation',
+    tag: '3-5 Days · Fixed Price Lock',
+    desc: 'Clear breakdown of materials, brand specifications, and exact prices for every item. Zero hidden charges or unexpected surprise costs.'
   },
   {
     num: '03',
     icon: Smartphone,
-    title: 'Supervised Build & Logs',
+    title: 'Supervised Work & WhatsApp Updates',
     tag: 'Weekly Progress Updates',
-    desc: 'JMB permit filings, dedicated site supervisor, and weekly photo and video logs sent straight to your phone.'
+    desc: 'We handle building management permits, assign a full-time site supervisor, and send weekly photo and video updates directly to your WhatsApp.'
   },
   {
     num: '04',
     icon: ShieldCheck,
-    title: 'Verified Handover',
-    tag: '72-Hr Ponding & Warranty',
-    desc: 'Mandatory 72-hour waterproofing verification, thorough joint inspection, and 12-month defect liability cover.'
+    title: 'Final Handover & 1-Year Warranty',
+    tag: '72-Hr Leak Test & 1-Year Warranty',
+    desc: 'Mandatory 72-hour water leak test, thorough walk-through check with you, and a full 1-year warranty with free defect repairs.'
   }
 ];
 

@@ -85,13 +85,35 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    @include smooth-transition;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      pointer-events: auto;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
 
     &:hover {
       background: #ffffff;
       border-color: rgba(16, 185, 129, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px) translateZ(0);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
 
       .step-icon-wrap {
         background: $primary;

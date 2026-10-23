@@ -9,35 +9,35 @@ const homeServicesList = [
     icon: Home,
     tag: 'Landed Properties',
     title: 'Landed Wet Kitchen & Extensions',
-    desc: 'Council-compliant structural extensions for terrace, semi-D, and bungalows. Solid RC slab casting, grease traps, and drainage correction.',
-    pills: ['Reinforced RC Lintels', 'Grease Traps', 'Drainage Slope Correction'],
+    desc: 'Local council-approved kitchen extensions for terrace, semi-D, and bungalows. Solid concrete slabs, grease traps, and smooth drainage.',
+    pills: ['Reinforced Concrete Beams', 'Grease Traps', 'Anti-Clog Drainage'],
     link: '/services#landed'
   },
   {
     id: 'condo',
     icon: Building2,
-    tag: 'High-Rise Fit-Outs',
-    title: 'Condo & Apartment Fit-Outs',
-    desc: 'Hassle-free JMB-compliant renovations. Managing hacking deposits, scheduled work permits, acoustic SPC flooring, and ambient coves.',
-    pills: ['JMB Permit Filing', 'Acoustic SPC Flooring', 'Ambient Cove Ceilings'],
+    tag: 'Condo & High-Rise',
+    title: 'Condo & Apartment Renovations',
+    desc: 'Hassle-free renovations with building management approval. We handle work permits, deposits, waterproof SPC flooring, and plaster ceilings with warm cove lighting.',
+    pills: ['Management Permits Handled', 'Waterproof SPC Flooring', 'Plaster Ceilings & Lighting'],
     link: '/services#condo'
   },
   {
     id: 'waterproofing',
     icon: Droplets,
     tag: 'Wet Area Specialist',
-    title: 'Bathroom & 72-Hr Waterproofing',
-    desc: 'End persistent ceiling leaks. Multi-layer polyurethane and cementitious waterproofing with mandatory 72-hour water ponding tests before tiling.',
-    pills: ['72-Hr Ponding Test', '100% Leak-Proof', 'Rectified Floor Tiling'],
+    title: 'Bathroom & 72-Hr Leak-Proofing',
+    desc: 'Stop persistent ceiling leaks permanently. Heavy-duty multi-layer waterproofing with our mandatory 72-hour water leak test before floor tiles are laid.',
+    pills: ['72-Hour Water Leak Test', '100% Leak-Proof', 'Even, Anti-Slip Tiling'],
     link: '/services#waterproofing'
   },
   {
     id: 'joinery',
     icon: Zap,
-    tag: 'Joinery & Electrical',
-    title: 'Custom Joinery & M&E Rewiring',
-    desc: 'Moisture-resistant kitchen cabinetry, powder-coated glass partitions, and full 3-phase DB upgrades with safety RCCB balancing.',
-    pills: ['Custom Made-to-Measure', '3-Phase Safety Rewiring', 'Concealed AC Trunking'],
+    tag: 'Cabinets & Wiring',
+    title: 'Custom Cabinets & Full Rewiring',
+    desc: 'Moisture-resistant kitchen cabinets, modern aluminum glass partitions, and safe 3-phase electrical box upgrades with circuit trip protection.',
+    pills: ['Custom Built-In Cabinets', '3-Phase Safety Rewiring', 'Hidden Air-Cond Piping'],
     link: '/services#joinery'
   }
 ];
@@ -46,7 +46,7 @@ export default function HomeServices() {
   return (
     <section className="home-services-section">
       <div className="container">
-        
+
         {/* Section Header */}
         <div className="home-section-header">
           <div className="section-badge">Core Specializations</div>

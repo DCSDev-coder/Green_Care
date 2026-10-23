@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
             
             <p className="brand-desc">
-              Selangor & KL residential renovation specialists. From landed kitchen extensions to condominium fit-outs, we build with itemized line-by-line BOQs and 72-hour waterproofing verification.
+              Selangor & KL residential renovation specialists. From landed kitchen extensions to complete condo makeovers, we build with clear fixed-price quotes, weekly WhatsApp progress updates, and a 1-year defect warranty.
             </p>
 
             <div className="brand-contact-pills">
@@ -48,9 +48,9 @@ export default function Footer() {
             <h4 className="footer-heading">Renovation Services</h4>
             <ul className="footer-nav-list">
               <li><Link to="/services#landed">Landed Wet Kitchen Extensions</Link></li>
-              <li><Link to="/services#condo">Condo & Apartment Fit-Outs</Link></li>
+              <li><Link to="/services#condo">Condo & Apartment Renovations</Link></li>
               <li><Link to="/services#waterproofing">72-Hour Waterproofing & Bathrooms</Link></li>
-              <li><Link to="/services#joinery">Custom Joinery & M&E Rewiring</Link></li>
+              <li><Link to="/services#joinery">Custom Cabinets & Full Rewiring</Link></li>
               <li><Link to="/calculator">Renovation Cost Calculator</Link></li>
             </ul>
           </div>
@@ -60,9 +60,9 @@ export default function Footer() {
             <h4 className="footer-heading">Standards & Proof</h4>
             <ul className="footer-nav-list">
               <li><Link to="/process">5-Step Transparent Process</Link></li>
-              <li><Link to="/workmanship">72-Hour Water Ponding Proofs</Link></li>
+              <li><Link to="/workmanship">72-Hour Water Leak Tests</Link></li>
               <li><Link to="/workmanship">Flagship C2 Cafe Handover</Link></li>
-              <li><Link to="/process">Sample Itemized BOQ</Link></li>
+              <li><Link to="/process">Sample Itemized Price Quote</Link></li>
               <li><Link to="/calculator">Renovation Cost Calculator</Link></li>
               <li><Link to="/workmanship">4-Point Quality Guarantee</Link></li>
             </ul>

@@ -6,7 +6,7 @@ import { Home, Building2, Building, Houses, Calculator, ArrowRight, MessageCircl
 const propertyTypes = [
   { id: 'terrace', name: 'Terrace House', icon: Home, rangeMin: '33,000', rangeMax: '55,000', desc: 'Typical 20x70 / 22x75 ft unit' },
   { id: 'semid', name: 'Semi-D / Bungalow', icon: Building2, rangeMin: '52,000', rangeMax: '95,000', desc: 'Spacious multi-level footprint' },
-  { id: 'condo', name: 'Condo / Apartment', icon: Building, rangeMin: '28,000', rangeMax: '48,000', desc: '850 – 1,400 sq.ft JMB-compliant' },
+  { id: 'condo', name: 'Condo / Apartment', icon: Building, rangeMin: '28,000', rangeMax: '48,000', desc: 'Typical 850 – 1,400 sq.ft unit' },
   { id: 'townhouse', name: 'Townhouse', icon: Houses, rangeMin: '30,000', rangeMax: '50,000', desc: 'Upper or lower unit configuration' }
 ];
 
@@ -74,7 +74,7 @@ export default function HomeEstimator() {
                 <span className="currency">RM</span>
                 <span className="price-val">{current.rangeMin} – {current.rangeMax}</span>
               </div>
-              <span className="result-note">{current.desc} · Turnkey Execution</span>
+              <span className="result-note">{current.desc} · Complete Move-In Ready</span>
 
               <div className="result-actions">
                 <Link 
@@ -92,7 +92,7 @@ export default function HomeEstimator() {
                   className="btn btn-calc-wa"
                 >
                   <MessageCircle size={15} />
-                  <span>WhatsApp Itemized Quote</span>
+                  <span>WhatsApp for Free Quote</span>
                 </a>
               </div>
             </div>

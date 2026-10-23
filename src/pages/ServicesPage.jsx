@@ -13,7 +13,6 @@ import {
   Calculator, 
   CheckCircle2, 
   MapPin, 
-  Camera, 
   XCircle, 
   ChevronDown 
 } from 'lucide-react';
@@ -129,10 +128,6 @@ export default function ServicesPage() {
               <div className="media-card">
                 <div className="media-img-wrap">
                   <img src={houseReno} alt="Landed wet kitchen extension and structural renovation by Green Cares" className="media-img" />
-                  <div className="media-badge">
-                    <Camera size={12} />
-                    <span>Real Site Photo</span>
-                  </div>
                 </div>
                 <div className="media-caption">
                   <div className="caption-header">
@@ -209,10 +204,6 @@ export default function ServicesPage() {
               <div className="media-card">
                 <div className="media-img-wrap">
                   <img src={interiorDesign} alt="Condo interior fit out by Green Cares" className="media-img" />
-                  <div className="media-badge">
-                    <Camera size={12} />
-                    <span>Real Site Photo</span>
-                  </div>
                 </div>
                 <div className="media-caption">
                   <div className="caption-header">
@@ -283,10 +274,6 @@ export default function ServicesPage() {
               <div className="media-card">
                 <div className="media-img-wrap">
                   <img src={plumbingWorks} alt="Waterproofing test verification by Green Cares" className="media-img" />
-                  <div className="media-badge">
-                    <Camera size={12} />
-                    <span>QC Verification</span>
-                  </div>
                 </div>
                 <div className="media-caption">
                   <div className="caption-header">
@@ -363,10 +350,6 @@ export default function ServicesPage() {
               <div className="media-card">
                 <div className="media-img-wrap">
                   <img src={c2Main} alt="Precision carpentry and sliding glass by Green Cares" className="media-img" />
-                  <div className="media-badge">
-                    <Camera size={12} />
-                    <span>Workshop Direct</span>
-                  </div>
                 </div>
                 <div className="media-caption">
                   <div className="caption-header">

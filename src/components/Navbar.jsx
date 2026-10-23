@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss';
-import gcsBrandLogo from '../assets/images/gcs-brand-logo-transparent.png';
+import gcsBrandLogo from '../assets/images/gcs-brand-logo-hd.png';
 import { Menu, X, MessageCircle, ShieldCheck, MapPin, Phone, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
@@ -31,7 +31,7 @@ export default function Navbar() {
             <span className="banner-divider">/</span>
             <span className="banner-text">
               <strong>Green Cares Specialists</strong>
-              <span className="sub-text">· Residential Renovation & Wet Works</span>
+              <span className="sub-text">· Residential Home Renovation & Extensions</span>
             </span>
           </div>
 

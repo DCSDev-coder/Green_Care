@@ -21,7 +21,7 @@ export default function HomeCoverage() {
           <div className="coverage-info-col">
             <div className="coverage-badge">
               <MapPin size={14} />
-              <span>Operational Base & Service Enclaves</span>
+              <span>Our Service Areas in Selangor & KL</span>
             </div>
 
             <h2 className="coverage-heading">Serving Selangor & Klang Valley Homeowners</h2>
@@ -52,9 +52,9 @@ export default function HomeCoverage() {
 
           <div className="coverage-cta-col">
             <div className="cta-box">
-              <h3 className="cta-box-title">Ready for a Zero-Obligation Inspection?</h3>
+              <h3 className="cta-box-title">Ready for a Free Site Consultation?</h3>
               <p className="cta-box-desc">
-                We meet at your property to take laser measurements, check wet area conditions, and prepare a line-by-line itemized BOQ.
+                We meet at your home to take laser measurements, check your space, and prepare a clear itemized quote with zero hidden fees.
               </p>
 
               <div className="cta-buttons">

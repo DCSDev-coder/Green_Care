@@ -85,16 +85,41 @@
     flex-direction: column;
     position: relative;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    @include smooth-transition;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.25s ease;
+
+    // Hit-testing safety buffer to completely prevent hover oscillation / jitter at card boundaries
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      pointer-events: auto;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
 
     &:hover {
-      border-color: rgba(16, 185, 129, 0.5);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.45);
+      transform: translateY(-2px) translateZ(0);
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.09);
 
       .service-link {
         color: $primary-dark;
-        gap: 0.55rem;
+
+        svg {
+          transform: translateX(3px);
+        }
       }
     }
 
@@ -169,7 +194,11 @@
       color: $primary;
       text-decoration: none;
       margin-top: auto;
-      @include smooth-transition;
+      transition: color 0.2s ease;
+
+      svg {
+        transition: transform 0.2s ease;
+      }
     }
   }
 

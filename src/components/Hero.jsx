@@ -30,7 +30,7 @@ export default function Hero() {
 
             {/* Clear, Simple Subtitle */}
             <p className="hero-lead">
-              From landed kitchen extensions to turnkey condo fit-outs. We build with itemized line-by-line BOQs, weekly on-site photo logs, and mandatory 72-hour waterproofing verification.
+              From landed kitchen extensions to complete condo makeovers. We build with transparent fixed-price quotes, weekly WhatsApp photo updates, and a 1-year free defect repair warranty.
             </p>
 
             {/* Clean Action Buttons */}
@@ -73,8 +73,8 @@ export default function Hero() {
                   <CheckCircle2 size={16} />
                 </div>
                 <div>
-                  <span className="floating-title">72-Hour Water Ponding Test</span>
-                  <span className="floating-sub">Mandatory leak-proof verification</span>
+                  <span className="floating-title">72-Hour Water Leak Test</span>
+                  <span className="floating-sub">100% leak-proof verification</span>
                 </div>
               </div>
             </div>
@@ -90,8 +90,8 @@ export default function Hero() {
                 <CheckCircle2 size={16} />
               </div>
               <div>
-                <strong>Itemized BOQ</strong>
-                <span>Line-by-line pricing</span>
+                <strong>Fixed-Price Quote</strong>
+                <span>No hidden costs or markups</span>
               </div>
             </div>
 
@@ -100,8 +100,8 @@ export default function Hero() {
                 <Hammer size={16} />
               </div>
               <div>
-                <strong>Direct Supervision</strong>
-                <span>Weekly on-site photo logs</span>
+                <strong>Site Supervisor</strong>
+                <span>Weekly WhatsApp photo logs</span>
               </div>
             </div>
 
@@ -110,8 +110,8 @@ export default function Hero() {
                 <ShieldCheck size={16} />
               </div>
               <div>
-                <strong>12-Mo Warranty</strong>
-                <span>Defect liability cover</span>
+                <strong>1-Year Warranty</strong>
+                <span>Free repairs for any defects</span>
               </div>
             </div>
           </div>
